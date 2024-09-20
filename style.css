@@ -338,6 +338,19 @@ p {
     font-weight: bold;
 }
 
+/* footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;  
+}
+
+footer p {
+    margin: 0;
+}
+
+
 /* whatsapp support floating icon */
 .whatsapp-button {
     position: fixed;
