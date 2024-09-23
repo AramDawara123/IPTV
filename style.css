@@ -8,10 +8,6 @@ html {
     background-color: #000;
     height: 100px;
     color: #fff;
-    -webkit-user-select: none;
-    -moz-user-select: none;   
-    -ms-user-select: none;    
-    user-select: none;        
 }
 
 * {
