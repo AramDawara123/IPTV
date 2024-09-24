@@ -55,7 +55,7 @@ Once the installation is complete, you can access the application in your browse
 
 
 ## Technologies Used
-- **Frontend**:Vanilla CSS , HTML and were reworking too react combined with typescript
+- **Frontend**:Vanilla CSS , HTML and were reworking it too react combined with typescript
 - **Backend**: Python , Flask
 - **Database**: SQlite
 - **Authentication**: JSON Web Tokens (JWT), OAuth2
