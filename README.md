@@ -18,7 +18,7 @@ Welcome to **Streaming Service**, a modern platform where users can stream their
 ### Prerequisites
 Before you begin, ensure you have met the following requirements:
 - Python min 3+
-- Node.js v14+ installed
+- Node.js v18+ installed
 - npm or Yarn
 - A MongoDB or PostgreSQL database
 
@@ -40,6 +40,10 @@ Before you begin, ensure you have met the following requirements:
 4. Run the app:
     ```bash
     npm start
+    to run react use: 
+
+    npm run dev 
+    and to open the wesite type o after it wich causes the project to open.
     ```
 
 ## Usage
@@ -51,7 +55,7 @@ Once the installation is complete, you can access the application in your browse
 
 
 ## Technologies Used
-- **Frontend**:Vanilla CSS , HTML
+- **Frontend**:Vanilla CSS , HTML and were reworking too react combined with typescript
 - **Backend**: Python , Flask
 - **Database**: SQlite
 - **Authentication**: JSON Web Tokens (JWT), OAuth2
