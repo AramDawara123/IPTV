@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
+import "../components/images/streamium.png"
 
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -8,7 +9,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav>
       <Link to="/home" className="title">
-        Streamium
+      <div className="logo"><img src="../components/images/streamium.png" alt="" /></div>
       </Link>
 
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
@@ -26,8 +27,9 @@ export const Navbar: React.FC = () => {
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
-        </li>
+        </li>    
       </ul>
+      <button className="btn-1"> <a href="https://wa.me/qr/2WXRBEQMIZKEB1">Free Trial</a></button>
     </nav>
   );
 };
