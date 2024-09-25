@@ -1,3 +1,6 @@
 flake8
 pytest
 flask
+SQLAlchemy
+flask-cors
+Flask-SQLAlchemy
