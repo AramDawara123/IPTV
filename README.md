@@ -23,9 +23,9 @@ Before you begin, ensure you have met the following requirements:
 - A MongoDB or PostgreSQL database
 
 ### Steps
-1. Clone the repository:
+1. Clone the repository:    
     ```bash
-    git clone https://github.com/your-username/streaming-service.git
+    git clone https://github.com/AramDawara123/IPTV/tree
     ```
 2. Navigate to the project directory:
     ```bash
