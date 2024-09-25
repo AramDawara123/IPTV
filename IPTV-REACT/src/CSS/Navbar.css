@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
 
 /* CSS-variabelen voor herbruikbare waarden */
 :root {
@@ -7,7 +7,7 @@
     --hover-bg-color: rgba(0, 0, 0, 0.4);
     --text-color-white: #ffffff;
     --shadow-color: rgba(165, 165, 165, 0.1);
-    --font-family: 'Press Start 2P', sans-serif;
+    --font-family: "Playwrite DE Grund";
 }
 
 /* Basisreset en standaardinstellingen voor alle elementen */

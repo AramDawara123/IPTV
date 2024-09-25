@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import "../CSS/Navbar.css";
 import { Link, NavLink } from "react-router-dom";
-import "../components/images/streamium.png"
 
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
     <nav>
-      <Link to="/home" className="title">
-      <div className="logo"><img src="../components/images/streamium.png" alt="" /></div>
+      <Link to="./main.tsx" className="title">
+      <div className="logo"><img src="" alt="" /></div>
       </Link>
 
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
