@@ -3,6 +3,8 @@ import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { About, Contact, Home, Services } from "./components/pages";
 
+
+
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -16,4 +18,5 @@ const App: React.FC = () => {
     </div>
   );
 };
+
 export default App;
