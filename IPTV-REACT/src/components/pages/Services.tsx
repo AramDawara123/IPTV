@@ -5,7 +5,7 @@ export const Services: React.FC = () => {
     <>
       <h1>Services</h1>
       <div></div>
-      <br />
+      <br/>
       <div></div>
       <br />
       <div></div>
