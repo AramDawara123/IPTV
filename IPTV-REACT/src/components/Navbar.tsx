@@ -7,7 +7,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav>
-      <Link to="/" className="title">
+      <Link to="/home" className="title">
         Streamium
       </Link>
 
