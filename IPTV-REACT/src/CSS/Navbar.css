@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
 
 /* CSS-variabelen voor herbruikbare waarden */
 :root {
@@ -7,7 +7,7 @@
     --hover-bg-color: rgba(0, 0, 0, 0.4);
     --text-color-white: #ffffff;
     --shadow-color: rgba(165, 165, 165, 0.1);
-    --font-family: 'Press Start 2P', sans-serif;
+    --font-family: "Playwrite DE Grund";
 }
 
 /* Basisreset en standaardinstellingen voor alle elementen */
@@ -31,16 +31,14 @@ body {
 
 /* nav-stijlen */
 nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: #0f172a;
-    color: white;
-    position: sticky;
-    top: 0;
-    padding: 1rem 5%;
-    box-shadow: 2px 2px 8px var(--shadow-color);
-    flex-wrap: wrap;
+    height: 69px;
+    background-color: black;
 }
 
 nav .title {
@@ -69,6 +67,7 @@ nav ul li a {
     font-size: 1rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
     display: inline-block;
+    text-decoration: none;
 }
 
 /* Hover- en focus-effecten voor links */
@@ -96,6 +95,35 @@ nav .menu span {
     width: 100%;
     background-color: var(--text-color-white);
     border-radius: 0.2rem;
+}
+
+button a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-1,
+.btn-2 {
+    font-weight: 700;
+    fill: #000001;
+    color: #000001;
+    background-color: #95DD4C;
+    border-radius: 28px 28px 28px 28px;
+}
+
+.logo {
+    margin-top: 0;
+    height: 100px;
+    width: 100px;
 }
 
 /* Responsiviteit voor mobiele schermen */
