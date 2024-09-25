@@ -34,8 +34,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--background-dark);
-    color: var(--text-color-white);
+    background-color: #0f172a;
+    color: white;
     position: sticky;
     top: 0;
     padding: 1rem 5%;
