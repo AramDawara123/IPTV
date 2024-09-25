@@ -76,6 +76,8 @@ export const Home: React.FC = () => {
 
       <section className="brand-section">
         <BrandItems />
+
+        
       </section>
     </section>
   );
