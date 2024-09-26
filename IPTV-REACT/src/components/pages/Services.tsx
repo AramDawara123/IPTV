@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Suspense } from "react";
 
 const getData = () => {
   fetch('data.json')
@@ -7,6 +7,17 @@ const getData = () => {
 
 console.log(getData);
 
+// const searchbar = () => {
+//   <div className="search" onSubmit={searchbar}>
+//       <label>
+//         Search movies:
+//         <input value={query} onChange={e => setQuery(e.target.value)} />
+//       </label>
+//       <Suspense fallback={<h2>Loading...</h2>}>
+//         <SearchResults query={query} />
+//       </Suspense>
+//   </div>
+// }
 
 export const Services: React.FC = () => {
   return (
