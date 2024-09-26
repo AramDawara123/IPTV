@@ -1,0 +1,26 @@
+.cardlist__movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.movie__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.heading {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.paragraph {
+    font-size: 14px;
+}
