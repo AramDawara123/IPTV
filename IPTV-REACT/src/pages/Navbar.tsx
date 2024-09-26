@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import "../CSS/Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
@@ -7,8 +7,8 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav>
-      <Link to="/home" className="title">
-        Streamium
+      <Link to="./main.tsx" className="title">
+      <div className="logo"><img src="" alt="" /></div>
       </Link>
 
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
@@ -26,8 +26,9 @@ export const Navbar: React.FC = () => {
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
-        </li>
+        </li>    
       </ul>
+      <button className="btn-1"> <a href="https://wa.me/qr/2WXRBEQMIZKEB1">Free Trial</a></button>
     </nav>
   );
 };

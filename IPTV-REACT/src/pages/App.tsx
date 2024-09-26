@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import { Navbar } from "./components/Navbar";
-import { About, Contact, Home, Services } from "./components/pages";
+import "../CSS/App.css";
+import { Navbar } from "./Navbar";
+import { About, Contact, Services } from ".";
+
+
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
@@ -16,4 +17,5 @@ const App: React.FC = () => {
     </div>
   );
 };
+
 export default App;
