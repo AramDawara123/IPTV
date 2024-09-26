@@ -9,8 +9,9 @@ const Card = ({ movies }) => {
           <img className="movie__image" src={movie.cover} alt={movie.name} />
           <div className="flex__card">
             <p className="heading">{movie.name}</p>
-            <p className="paragraph">{movie.plot}</p>
+            <br/>
             <p className="paragraph">Cast: {movie.cast}</p>
+            <br />
             <p className="paragraph">Release Date: {movie.releaseDate}</p>
             <p className="paragraph">Rating: {movie.rating} / 10</p>
           </div>
@@ -40,12 +41,10 @@ export const Services: React.FC = () => {
 
   return (
     <>
-      <h1>Services</h1>
       <div className="intropage-service">
-        <p>
-          We have movies, shows, and series that we provide. You can search any
-          movie, series, or show.
-        </p>
+        <h3>
+          We have movies, shows, and series that we provide. These are some examples we have of what we stream
+        </h3>
       </div>
       <br />
       {movies.length > 0 ? <Card movies={movies} /> : <p>Loading...</p>}

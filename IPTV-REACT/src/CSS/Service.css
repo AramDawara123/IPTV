@@ -1,3 +1,9 @@
+.intropage-service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 * {
     color: white
 }
@@ -9,15 +15,15 @@
 }
 .card {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 35px;
     width: 310px;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .movie__image {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .heading {
