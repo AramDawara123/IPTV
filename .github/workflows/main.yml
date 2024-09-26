@@ -11,10 +11,10 @@ permissions:
 
 jobs:
   build:
-    timeout-minutes: 10  # Explicitly set a timeout for the job
+    timeout-minutes: 10  # Set a timeout for the job
     strategy:
       matrix:
-        os: [ubuntu-latest]  # Start with just one OS to isolate issues
+        os: [ubuntu-latest, windows-latest, macos-latest]  # Use all OS to ensure compatibility
 
     runs-on: ${{ matrix.os }}
 
@@ -29,9 +29,38 @@ jobs:
       with:
         python-version: "3.10"
 
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
     - name: Install dependencies
       run: |
+        pip install --upgrade pip  # Upgrade pip
         pip install -r requirements.txt
+
+    - name: Run security checks with Bandit
+      run: |
+        pip install bandit
+        bandit -r .
+
+    - name: Check code formatting with Black
+      run: |
+        pip install black
+        black --check .
+
+    - name: Run tests with pytest
+      run: |
+        pip install pytest
+        pytest
+
+    - name: Lint code with Flake8
+      run: |
+        pip install flake8
+        flake8 .
 
     - name: Display Python version and environment
       run: |
