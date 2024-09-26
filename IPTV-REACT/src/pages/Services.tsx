@@ -48,7 +48,6 @@ export const Services: React.FC = () => {
         </p>
       </div>
       <br />
-      {/* Render the Card component and pass the fetched movies data */}
       {movies.length > 0 ? <Card movies={movies} /> : <p>Loading...</p>}
     </>
   );
