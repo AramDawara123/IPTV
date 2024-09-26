@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/Home.css";
+import "../CSS/App.css";
 
 interface BrandItemProps {
   src: string;

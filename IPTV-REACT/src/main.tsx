@@ -8,7 +8,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
-      <p>Hier gaat tekst</p>
+
+
+
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -77,3 +77,39 @@
 .item8 {
     animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }
+
+/* content styling */
+/* Centrale tekst-stijlen */
+.center-text {
+    text-align: center;
+    padding-top: 4rem;
+}
+.center-text h2 {
+    font-size: 2rem;
+    color: white;
+}
+/* Feature-content styling */
+.feature-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 2%;
+}
+/* Box-stijlen voor tips */
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-left: 0.5rem solid;
+    box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    
+    transition: transform 0.3s ease-in-out;
+}
+.box:hover {
+    transform: translateY(-4px) scale(1.02);
+    cursor: pointer;
+}
