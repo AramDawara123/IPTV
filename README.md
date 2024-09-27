@@ -41,6 +41,8 @@ Before you begin, ensure you have met the following requirements:
     to run flask use:
     python main.py to run the flask application
 
+
+    
     to run react use: 
     cd iptv-react
     npm run dev 
