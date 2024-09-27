@@ -45,7 +45,7 @@ Before you begin, ensure you have met the following requirements:
     cd iptv-react
     npm run dev 
     you can cancel it by typing q
-    ![gif github](https://github.com/user-attachments/assets/6b542ad0-39ab-46b5-ad4a-3f011a3e5c7b)
+(https://github.com/user-attachments/assets/981607a2-8b7b-4792-b513-fc4dd9fe9c2f)
 
     ```
 
