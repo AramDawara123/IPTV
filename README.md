@@ -41,7 +41,7 @@ Before you begin, ensure you have met the following requirements:
     to run flask use:
     python main.py to run the flask application
 
-
+![testgif2](https://github.com/AramDawara123/IPTV/blob/main/IPTV-REACT/images/pythongif.gif)
     
     to run react use: 
     cd iptv-react
