@@ -39,12 +39,14 @@ Before you begin, ensure you have met the following requirements:
     ```bash
     npm start
     to run flask use:
-    python main.py torun the flask application
+    python main.py to run the flask application
 
     to run react use: 
-
+    cd iptv-react
     npm run dev 
     you can cancel it by typing q
+    ![gif github](https://github.com/user-attachments/assets/6b542ad0-39ab-46b5-ad4a-3f011a3e5c7b)
+
     ```
 
 ## Usage
