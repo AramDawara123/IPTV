@@ -47,8 +47,6 @@ Before you begin, ensure you have met the following requirements:
     you can cancel it by typing q
 ![testgif](https://github.com/AramDawara123/IPTV/blob/main/IPTV-REACT/images/gif%20github.gif)
 
-    ```
-
 ## Usage
 Once the installation is complete, you can access the application in your browser at `http://localhost:5173`.
 
