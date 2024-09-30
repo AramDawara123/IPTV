@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/Service.css";
 
+const header = ({searchmovie, movies}) => {
+
+}
+
+
 const Card = ({ movies }) => {
   return (
     <div className="cardlist__movies">
