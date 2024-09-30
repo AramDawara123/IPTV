@@ -1,0 +1,36 @@
+.intropage-service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    color: white
+}
+.cardlist__movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    border: 1px solid #ddd;
+    padding: 35px;
+    width: 310px;
+    border-radius: 20px;
+}
+
+.movie__image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.heading {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.paragraph {
+    font-size: 12px;
+}

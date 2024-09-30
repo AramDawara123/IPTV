@@ -1,0 +1,82 @@
+[
+    {
+    "num": 1,
+    "name": "2 Garotas em Apuros (2011)",
+    "series_id": 3,
+    "cover": "http://7go.xyz:8080/images/16ef53e30661ef11a104cf6e81ccf8af.jpg",
+    "plot": "Max \u00e9 trabalhadora, esperta e est\u00e1\u00a0sempre\u00a0dura. Caroline veio de fam\u00edlia rica, sempre teve tudo o que quis, mas pela primeira\u00a0vez\u00a0na\u00a0vida\u00a0est\u00e1 sentindo na pele o que \u00e9 n\u00e3o ter dinheiro. Duas mulheres de mundos diferentes que s\u00e3o unidas pelo destino por compartilhar da mesma prec\u00e1ria situa\u00e7\u00e3o financeira.",
+    "cast": "Kat Dennings, Beth Behrs, Garrett Morris, Jonathan Kite, Matthew Moy",
+    "director": "",
+    "genre": "Com\u00e9dia",
+    "releaseDate": "2011-09-19",
+    "last_modified": "1687893826",
+    "rating": "7",
+    "rating_5based": 3.5,
+    "backdrop_path": [
+        "http://7go.xyz:8080/images/a31f7f57662a7a8a002fee7449609c2b.jpg"
+    ],
+    "youtube_trailer": "",
+    "episode_run_time": "25",
+    "category_id": "805"
+    },
+    {
+        "num": 3502,
+        "name": "Monarch - Legado de Monstros (2023)",
+        "series_id": 4075,
+        "cover": "http://image.tmdb.org/t/p/w600_and_h900_bestv2/3IYqVM2jEHn8j9ZVETE0VcNvGoz.jpg",
+        "plot": "Ap\u00f3s sobreviver ao ataque do Godzilla em S\u00e3o Francisco, Cate \u00e9 abalada novamente por um segredo chocante. Em meio a amea\u00e7as monstruosas, ela embarca em uma aventura pelo mundo para descobrir a verdade sobre sua fam\u00edlia\u2014e a organiza\u00e7\u00e3o misteriosa conhecida como Monarch.",
+        "cast": "Kurt Russell, Anna Sawai, Kiersey Clemons, Ren Watabe, Wyatt Russell",
+        "director": "",
+        "genre": "Drama, Sci-Fi & Fantasy, Action & Adventure",
+        "releaseDate": "2023-11-16",
+        "last_modified": "1701870267",
+        "rating": "8",
+        "rating_5based": 4,
+        "backdrop_path": [
+          "http://image.tmdb.org/t/p/w1280/t9i4Icf1LsGIgkpnokQaC4hzxLa.jpg"
+        ],
+        "youtube_trailer": "8b2bV1jsHoA",
+        "episode_run_time": "0",
+        "category_id": "953"
+      },
+      {
+        "num": 1422,
+        "name": "A Amiga Genial (2018)",
+        "series_id": 1721,
+        "cover": "http://7online.xyz:8080/images/8beecdf15e0ee6bbad9556fe9f2cb800.jpg",
+        "plot": "Depois de saber que sua amiga de longa data, Lila Cerullo, desapareceu sem deixar vest\u00edgios, a escritora Elena Greco relembra sua turbulenta amizade em uma perigosa e fascinante N\u00e1poles, It\u00e1lia.",
+        "cast": "Gaia Girace, Margherita Mazzucco, Ludovica Nasti, Elisa del Genio, Dora Romano",
+        "director": "",
+        "genre": "Drama",
+        "releaseDate": "2018-11-18",
+        "last_modified": "1666115834",
+        "rating": "8",
+        "rating_5based": 4,
+        "backdrop_path": [
+        "http://7online.xyz:8080/images/72fb16da8e5115135b91190186cc602d.jpg"
+        ],
+        "youtube_trailer": "63YZrrEfFZ0",
+        "episode_run_time": "58",
+        "category_id": "871"
+    },
+    {
+        "num": 3537,
+        "name": "A Concierge Pok\u00e9mon (2023)",
+        "series_id": 4110,
+        "cover": "http://image.tmdb.org/t/p/w600_and_h900_bestv2/ySSivX1z5n7ALFF0082sbsCasK2.jpg",
+        "plot": "Conhe\u00e7a o Pok\u00e9mon Resort, o ref\u00fagio perfeito para Pok\u00e9mons relaxarem e se divertirem. Qual ser\u00e1 o h\u00f3spede fofo que vai ganhar o cora\u00e7\u00e3o da nova concierge Haru?",
+        "cast": "Non, Fairouz Ai, Eita Okuno",
+        "director": "Sarasa Onodera",
+        "genre": "Anima\u00e7\u00e3o, Fam\u00edlia",
+        "releaseDate": "2023-12-28",
+        "last_modified": "1704462746",
+        "rating": "8",
+        "rating_5based": 4,
+        "backdrop_path": [
+          "http://image.tmdb.org/t/p/w1280/hgM7T4zkkrvLPB6RDMEYeSMJSPO.jpg"
+        ],
+        "youtube_trailer": "GReMZuIBIrU",
+        "episode_run_time": "0",
+        "category_id": "805"
+      }
+]
