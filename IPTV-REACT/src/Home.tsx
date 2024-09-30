@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
-import "./CSS/Home.css";
+import "./CSS/Home.css"; // Ensure correct file path for CSS
 
 const Home: React.FC = () => {
   return (
@@ -14,11 +14,11 @@ const Home: React.FC = () => {
           anytime and anywhere,<br />
           with over +18,000 channels, +88,000 VOD and uptime 100%
         </p>
-        <button className="free-trial-btn">
-          <a href="https://wa.me/qr/2WXRBEQMIZKEB1">Free Trial</a>
-        </button>
+        <a href="https://wa.me/qr/2WXRBEQMIZKEB1" className="free-trial-btn">
+          Free Trial
+        </a>
         <div className="devices">
-          <img src="images/devices-4.png" alt="" />
+          <img src="/images/devices-4.png" alt="Devices" />
         </div>
         <div className="color-overlay"></div>
       </section>
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
       <div className="features">
         {[
           {
-            img: "images/earth_asia.png",
+            img: "/images/earth_asia.png",
             title: "Channels from 115 countries worldwide",
             text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy / Israel / Ex-Yu / Hindi / Arabic / Turkey...)"
           },
@@ -36,49 +36,15 @@ const Home: React.FC = () => {
             text: "Within 7 days of your purchase you have the option to cancel our IPTV subscription if you are not satisfied. Then you will receive a full refund from us."
           },
           {
-            img: "images/star-struck.png",
+            img: "/images/star-struck.png",
             title: "High Quality HD/FHD/4K/8K",
-            text: "We offer all image qualities to view our iptv service everywhere, regardless of your network speed on: Mobile / TV / Android box / PC ..."
+            text: "We offer all image qualities to view our IPTV service everywhere, regardless of your network speed on: Mobile / TV / Android box / PC ..."
           }
         ].map((feature, index) => (
           <div className="feature" key={index}>
-            <img src={feature.img} alt="" />
+            <img src={feature.img} alt={feature.title} />
             <h3>{feature.title}</h3>
             <p>{feature.text}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="wrapper">
-        {[
-          "images/brand_item05-150x46-1-1.webp",
-          "images/brand_item06-150x46-1-1.webp",
-          "images/brand_item08-150x46-1-1.webp",
-          "images/brand_item09-150x46-1-1.webp",
-          "images/brand_item10-150x46-1-1.webp",
-          "images/brand_item11-1.webp",
-          "images/brand_item12-1.webp",
-          "images/brand_item13-150x46-1-1.webp",
-        ].map((src, index) => (
-          <div className="itemLeft" key={index}>
-            <img src={src} alt="" />
-          </div>
-        ))}
-      </div>
-
-      <div className="wrapper">
-        {[
-          "images/brand_item14-150x46-1-1.webp",
-          "images/brand_item15-150x46-1-1.webp",
-          "images/brand_item16-150x46-1-1.webp",
-          "images/brand_item17-150x46-1-1.webp",
-          "images/brand_item18-150x46-1-1.webp",
-          "images/brand_item21-150x46-1-1.webp",
-          "images/brand_item22-150x46-1-1.webp",
-          "images/brand_item15-150x46-1-1.webp",
-        ].map((src, index) => (
-          <div className="itemRight" key={index}>
-            <img src={src} alt="" />
           </div>
         ))}
       </div>
@@ -104,7 +70,7 @@ const Home: React.FC = () => {
               </ul>
               <button className="btn-2">Buy Now</button>
               <p>Ready within 5 to 7 min</p>
-              <img src="images/devices-1.webp" alt="" />
+              <img src="/images/devices-1.webp" alt="Devices" />
             </div>
           ))}
         </div>
@@ -117,7 +83,7 @@ const Home: React.FC = () => {
             {
               number: "1",
               title: "Place your order",
-              text: "Place your order by choosing your preferred subscription period : 6, 12 or 24 months. Note: You will get a free 6 hours no matter what plan you choose.",
+              text: "Place your order by choosing your preferred subscription period : 6, 12 or 24 months.",
               icon: "🛍️"
             },
             {
