@@ -1,34 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
-
-/* CSS-variabelen voor herbruikbare waarden */
-:root {
-    --background-dark: #0f172a;
-    --text-color-light: #fff090;
-    --hover-bg-color: rgba(0, 0, 0, 0.4);
-    --text-color-white: #ffffff;
-    --shadow-color: rgba(165, 165, 165, 0.1);
-    --font-family: "Playwrite DE Grund";
-}
-
-/* Basisreset en standaardinstellingen voor alle elementen */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: var(--font-family);
-}
-
-/* body-stijlen */
-body {
-    width: 100%;
-    font-size: 1rem;
-    height: 100%;
-    background-color: #000;
-    text-transform: uppercase;
-    overflow-x: hidden;
-}
-
+/* Reusable values */
 nav {
     margin: 0;
     padding: 0;
@@ -60,7 +30,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--text-color-light);
+    color: #fff090;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -85,7 +55,7 @@ button {
     fill: #000001;
     color: #000001;
     background-color: #95DD4C;
-    border-radius: 28px 28px 28px 28px;
+    border-radius: 28px;
 }
 
 nav .menu {
@@ -102,7 +72,7 @@ nav .menu {
 nav .menu span {
     height: 0.4rem;
     width: 100%;
-    background-color: var(--text-color-white);
+    background-color: #ffffff;
     border-radius: 0.2rem;
 }
 
@@ -115,7 +85,7 @@ button a {
 /* Adjustments for button centering */
 nav {
     display: flex;
-    justify-content: space-around; /* Ensures even spacing between elements */
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -150,14 +120,14 @@ nav {
     }
 
     nav .logo-button-container {
-        order: 2; /* Ensure button is placed after menu */
-        width: 100%; /* Button spans full width */
+        order: 2;
+        width: 100%;
         display: flex;
         justify-content: center;
-        margin-right: 0; /* Remove right margin */
+        margin-right: 0;
     }
 
     .btn-1 {
-        width: 80%; /* Button takes up 80% of screen width */
+        width: 80%;
     }
 }
