@@ -78,5 +78,85 @@
         "youtube_trailer": "GReMZuIBIrU",
         "episode_run_time": "0",
         "category_id": "805"
+      },
+      {
+        "num": 58,
+        "name": "Cosmos (2014)",
+        "series_id": 81,
+        "cover": "http://7online.xyz:8080/images/a9fa827bede30279b7fc5797a78c3f9a.jpg",
+        "plot": "Uma aventura que se estende por bilh\u00f5es de anos na evolu\u00e7\u00e3o da vida e da consci\u00eancia. Uma visita a um laborat\u00f3rio de 100 mil anos de idade. A hist\u00f3ria da mudan\u00e7a no estilo de vida que alterou radicalmente a exist\u00eancia humana e a vida do herege que encontrou Deus no livro da natureza, abrindo caminho para as estrelas.",
+        "cast": "Neil deGrasse Tyson",
+        "director": "",
+        "genre": "Document\u00e1rio",
+        "releaseDate": "2014-03-09",
+        "last_modified": "1661960421",
+        "rating": "8",
+        "rating_5based": 4,
+        "backdrop_path": [
+          "http://7online.xyz:8080/images/ed285e0151fa62e00fbeb5860536c12e.jpg"
+        ],
+        "youtube_trailer": "",
+        "episode_run_time": "60",
+        "category_id": "885"
+      },
+      {
+        "num": 59,
+        "name": "Counterpart: Mundo Paralelo (2017)",
+        "series_id": 82,
+        "cover": "http://7online.xyz:8080/images/fb9022a207904128debfbc134cdbcfd6.jpg",
+        "plot": "Harold Silk tem seu emprego amea\u00e7ado quando descobre o grande segredo de que a organiza\u00e7\u00e3o esconde uma f\u00f3rmula que permite passar para uma dimens\u00e3o paralela.",
+        "cast": "J.K. Simmons, Nazanin Boniadi, Harry Lloyd, Olivia Williams, Sara Serraiocco",
+        "director": "",
+        "genre": "Sci-Fi & Fantasy, Drama",
+        "releaseDate": "2017-12-10",
+        "last_modified": "1661969305",
+        "rating": "7",
+        "rating_5based": 3.5,
+        "backdrop_path": [
+          "http://7online.xyz:8080/images/d1819837042e5ae74866b881a4953262.jpg"
+        ],
+        "youtube_trailer": "",
+        "episode_run_time": "56",
+        "category_id": "874"
+      },
+      {
+        "num": 60,
+        "name": "Criminal Minds / Mentes Criminosas (2005)",
+        "series_id": 83,
+        "cover": "http://7online.xyz:8080/images/df188b95d3e119a4d1cbf89dd12577b0.jpg",
+        "plot": "Um esquadr\u00e3o de elite do FBI estuda as maiores mentes criminosas, antecipando seus pr\u00f3ximos passos, antes que eles ataquem novamente. A fim de identificar as motiva\u00e7\u00f5es dos criminosos e det\u00ea-los, cada membro da equipe usa a experi\u00eancia que possui.",
+        "cast": "A.J. Cook, Joe Mantegna, Adam Rodr\u00edguez, Daniel Henney, Aisha Tyler",
+        "director": "",
+        "genre": "Crime, Drama, Mist\u00e9rio",
+        "releaseDate": "2005-09-22",
+        "last_modified": "1702310125",
+        "rating": "8",
+        "rating_5based": 4,
+        "backdrop_path": [
+          "http://7online.xyz:8080/images/eccd56b7962335de2d34dd09714f3a85.jpg"
+        ],
+        "youtube_trailer": "",
+        "episode_run_time": "42",
+        "category_id": "869"
+      },
+      {
+        "num": 61,
+        "name": "CSI Miami (2002)",
+        "series_id": 84,
+        "cover": "http://7online.xyz:8080/images/47931b7a7b7025adfd471a274b396829.jpg",
+        "plot": "CSI: Miami \u00e9 uma s\u00e9rie de televis\u00e3o que mostra o trabalho de investiga\u00e7\u00e3o criminal de uma equipe em Miami.\n\nAp\u00f3s o grande sucesso da s\u00e9rie original, uma segunda s\u00e9rie nos mesmos formatos do CSI: Crime Scene Investigation foi criada. Surgiu, ent\u00e3o a s\u00e9rie CSI: Miami, que teve seu primeiro epis\u00f3dio derivado do epis\u00f3dio Cross-Jurisdictions da s\u00e9rie original, ocorrido no final de sua segunda temporada e que foi ao ar em 9 de maio de 2002. Neste epis\u00f3dio, os CSIs Warrick Brown e Catherine Willows v\u00e3o a Miami ajudar os CSIs locais a resolver o assassinato do ex chefe de pol\u00edcia de Las Vegas, que foi encontrado morto ap\u00f3s uma festa em sua resid\u00eancia. Sua filha de 7 anos e sua esposa, por\u00e9m, foram levadas para Miami.\n\nA partir da\u00ed a equipe de Horatio Caine (David Caruso), Calleigh Duquesne (Emily Procter), Eric Delko (Adam Rodriguez), Alexx Woods (Khandi Alexander) e Tim Speedle (Rory Cochrane) continuaram a s\u00e9rie cuidando de casos misteriososo e muitas vezes inexplic\u00e1veis na ensolarada Miami. Ao longo da s\u00e9rie ocorreram algumas mudan\u00e7as de elenco com a sa\u00edda de Kim Delaney e a entrada de Sofia Milos (Yelina Salas). Na terceira temporada o personagem de Rory Cochrane foi morto em um tiroteio e foi substituido por Jonathan Togo (Ryan Wolfe).",
+        "cast": "David Caruso, Emily Procter, Adam Rodr\u00edguez, Eva LaRue, Omar Benson Miller",
+        "director": "",
+        "genre": "Drama, Mist\u00e9rio, Crime",
+        "releaseDate": "2002-09-23",
+        "last_modified": "1663511792",
+        "rating": "8",
+        "rating_5based": 4,
+        "backdrop_path": [
+          "http://7online.xyz:8080/images/81a0ebe7d3915db7952a03a028b419e2.jpg"
+        ],
+        "youtube_trailer": "",
+        "episode_run_time": "42",
+        "category_id": "880"
       }
 ]

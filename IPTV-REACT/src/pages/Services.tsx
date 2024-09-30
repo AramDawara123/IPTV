@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/Service.css";
 
+
 const Card = ({ movies }) => {
   return (
     <div className="cardlist__movies">
