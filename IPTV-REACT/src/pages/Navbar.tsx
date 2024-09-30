@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
   return (
 <nav>
   {/* Left-aligned logo */}
-  <Link to="./main.tsx" className="logo">
+  <Link to="./Home" className="logo">
     <img src="images/streamium.png" alt="Logo" />
   </Link>
 
