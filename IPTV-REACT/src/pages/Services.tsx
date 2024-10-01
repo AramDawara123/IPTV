@@ -9,6 +9,7 @@ const Card = ({ movies }) => {
         <div className="card" key={index}>
           <img className="movie__image" src={movie.cover} alt={movie.name} />
           <div className="flex__card">
+            <p><button className="flip-btn">I</button></p>
             <p className="heading">{movie.name}</p>
             <p className="paragraph">Cast: {movie.cast}</p>
             <p className="paragraph">Release Date: {movie.releaseDate}</p>
