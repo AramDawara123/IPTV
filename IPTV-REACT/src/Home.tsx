@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
 import "./CSS/Home.css"; 
+import FAQ from "./pages/FAQ";
 
 const Home: React.FC = () => {
   return (
@@ -141,6 +142,10 @@ const Home: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="container">
+      <FAQ />
       </div>
 
       <div className="whatsapp-support-1">
