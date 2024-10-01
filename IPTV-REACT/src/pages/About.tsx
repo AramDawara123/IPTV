@@ -4,7 +4,7 @@ import "../CSS/About.css";
 const AboutUs: React.FC = () => {
   return (
     <>
-      <main className="container">
+      <main className="about-container">
         <h1>About IPTV Streaming Service</h1>
 
         <div className="about-grid">
