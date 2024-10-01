@@ -3,7 +3,6 @@ import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
 import "./CSS/Home.css"; 
-import FAQ from "./pages/FAQ";
 
 const Home: React.FC = () => {
   return (
@@ -29,7 +28,7 @@ const Home: React.FC = () => {
           {
             img: "/images/earth_asia.png",
             title: "Channels from 115 countries worldwide",
-            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy / Israel / Ex-Yu / Hindi / Arabic / Turkey...)"
+            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy/ Hindi / Arabic / Turkey...)"
           },
           {
             img: "/images/moneybag.png",
@@ -142,10 +141,6 @@ const Home: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="container">
-      <FAQ />
       </div>
 
       <div className="whatsapp-support-1">
