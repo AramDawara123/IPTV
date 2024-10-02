@@ -1,5 +1,5 @@
 # from urllib import request
-from flask import Flask, jsonify , request, render_template
+from flask import Flask, jsonify , request, render_template, redirect, url_for
 import json
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -30,10 +30,22 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        User.password=password
-        User.username=username
+        user = User(username=username, password=password)
+        db.session.add(user)
+        db.session.commit()
 
     return render_template('register.html')
+app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = User.query.filter_by(username=username).first()
+        # if user and user.password == password:
+        return redirect(url_for('index'))
+
+    return
+
 @app.route('/api/data', methods=['GET'])
 def get_data():
     with open('data.json', 'r') as file:
