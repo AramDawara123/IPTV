@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import Home from "../Home";
 import About from "./About";
@@ -10,6 +10,7 @@ const App: React.FC = () => {
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<Navigate to="/home"/>} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
