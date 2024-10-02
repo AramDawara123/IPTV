@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
-import "./CSS/Home.css"; // Ensure correct file path for CSS
+import "./CSS/Home.css"; 
 
 const Home: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
           {
             img: "/images/earth_asia.png",
             title: "Channels from 115 countries worldwide",
-            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy / Israel / Ex-Yu / Hindi / Arabic / Turkey...)"
+            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy/ Hindi / Arabic / Turkey...)"
           },
           {
             img: "/images/moneybag.png",
@@ -45,6 +45,40 @@ const Home: React.FC = () => {
             <img src={feature.img} alt={feature.title} />
             <h3>{feature.title}</h3>
             <p>{feature.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="wrapper">
+        {[
+          "images/brand_item05-150x46-1-1.webp",
+          "images/brand_item06-150x46-1-1.webp",
+          "images/brand_item08-150x46-1-1.webp",
+          "images/brand_item09-150x46-1-1.webp",
+          "images/brand_item10-150x46-1-1.webp",
+          "images/brand_item11-1.webp",
+          "images/brand_item12-1.webp",
+          "images/brand_item13-150x46-1-1.webp",
+        ].map((src, index) => (
+          <div key={index} className={`itemLeft item${index + 1}`}>
+            <img src={src} alt="" />
+          </div>
+        ))}
+      </div>
+
+      <div className="wrapper">
+        {[
+          "images/brand_item14-150x46-1-1.webp",
+          "images/brand_item15-150x46-1-1.webp",
+          "images/brand_item16-150x46-1-1.webp",
+          "images/brand_item17-150x46-1-1.webp",
+          "images/brand_item18-150x46-1-1.webp",
+          "images/brand_item21-150x46-1-1.webp",
+          "images/brand_item22-150x46-1-1.webp",
+          "images/brand_item15-150x46-1-1.webp",
+        ].map((src, index) => (
+          <div key={index} className={`itemRight item${index + 1}`}>
+            <img src={src} alt="" />
           </div>
         ))}
       </div>
