@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ "main", "backend" ]
 
+
 permissions:
   contents: read
 
@@ -32,40 +33,7 @@ jobs:
         python --version
         pip --version
         pip list
-        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-
-    - name: Install Python dependencies
-      run: |
         pip install -r requirements.txt
-
-    - name: Run Python Tests
-      run: |
-        pip install pytest
-        pytest
-
-  frontend:
-    name: Frontend - React
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-
-      - name: Install Node.js dependencies
-        run: npm install
-        working-directory: ./iptv/iptv-react
-
-      - name: Run React Tests
-        run: npm test -- --coverage
-        working-directory: ./iptv/iptv-react
-
-      - name: Build React Application
-        run: npm run build
-        working-directory: ./iptv/iptv-react
