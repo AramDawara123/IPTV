@@ -10,8 +10,35 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  frontend:
+    name: Frontend - React
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: List directory contents
+        run: ls -R ./PITV
+
+      - name: Install Node.js dependencies
+        run: npm install
+        working-directory: ./PITV/IPTV-REACT
+
+      - name: Run React Tests
+        run: npm test -- --coverage
+        working-directory: ./PITV/IPTV-REACT
+
+      - name: Build React Application
+        run: npm run build
+        working-directory: ./PITV/IPTV-REACT
+
+  python:
+    name: Python Application
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
