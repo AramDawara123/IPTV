@@ -42,10 +42,13 @@ Before you begin, ensure you have met the following requirements:
     python main.py to run the flask application
 
 ![testgif2](https://github.com/AramDawara123/IPTV/blob/main/IPTV-REACT/images/pythongif.gif)
-    
-    to run react use: 
+
+5. to run react install vite:
+   ````bash
     cd iptv-react
-    npm run dev 
+    npm install 
+    npm run dev
+    you can open the project by typing o
     you can cancel it by typing q
 ![testgif](https://github.com/AramDawara123/IPTV/blob/main/IPTV-REACT/images/gif%20github.gif)
 

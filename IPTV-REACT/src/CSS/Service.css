@@ -34,3 +34,27 @@
 .paragraph {
     font-size: 12px;
 }
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn {
+    border-radius: 15px;
+    background-color: #95DD4C;
+    font-size: 10px;
+    color: black;
+}
+
+.input {
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    color: black;
+}
+
+.flip-btn {
+    background-color: #95DD4C;
+    color: white;
+}

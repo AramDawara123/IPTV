@@ -1,13 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Roboto", Sans-serif;
+}
 
-.btn-1,
-.btn-2 {
+/* body-stijlen */
+body {
+    width: 100%;
+    font-size: 1rem;
+    height: 100%;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.btn-1, .btn-2 {
     font-weight: 700;
     fill: #000001;
     color: #000001;
     background-color: #95DD4C;
-    border-radius: 28px 28px 28px 28px;
+    border-radius: 28px;
+    margin-bottom: 1rem;
 }
 
 .free-trial-btn {
@@ -18,9 +34,8 @@
     text-decoration: none;
     background-color: #95DD4C;
     cursor: pointer;
-    border-radius: 25px 25px 25px 25px;
-    padding: 15px 70px 15px 70px;
-
+    border-radius: 25px;
+    padding: 15px 70px;
 }
 
 .devices img {
@@ -39,8 +54,7 @@
 
 .container {
     background-color: transparent;
-    background-image: linear-gradient(180deg, #000000B8 0%, #000000 100%), url('/images/image-10-min.jpeg');
-    opacity: 1;
+    background-image: linear-gradient(180deg, #000000B8 0%, #000000 30%), url('/images/image-10-min.jpeg');
     width: 100%;
     flex-direction: column;
     display: flex;
@@ -49,13 +63,6 @@
 }
 
 
-.color-overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-}
 
 .hero {
     text-align: center;
@@ -78,7 +85,6 @@
     font-size: 20px;
     font-weight: 300;
 }
-
 
 .features {
     display: flex;
@@ -157,6 +163,13 @@
 
 .work {
     text-align: center;
+}
+
+.bottom-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35px;
 }
 
 /* how does it work section */
@@ -287,7 +300,6 @@ footer p {
 .whatsapp-button:after {
     animation-delay: .5s;
 }
-
 @keyframes border-animate {
     0% {
         transform: scale(0.5);
