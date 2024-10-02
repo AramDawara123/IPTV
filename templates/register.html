@@ -4,97 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Login and Registration</title>
-    <!-- Link to the external CSS file -->
-    <style>
+    <style> 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap');
 
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: #333;
-    text-align: center;
-}
-
-form {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-}
-
-label {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: block;
-    color: #555;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    form {
-        padding: 30px;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-
-    button {
-        padding: 12px;
-        font-size: 1.1rem;
-    }
-}
-
     </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Register</h1>
+<div>
+    <div class="register">
+        <h1>Register</h1>
+    </div>
     <form action="/register" method="post">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br>
@@ -105,4 +25,4 @@ button:hover {
         <button type="submit">Register</button>
     </form>
 </body>
-</html>
+</html> 
