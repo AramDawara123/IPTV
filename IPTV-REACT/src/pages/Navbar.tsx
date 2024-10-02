@@ -1,44 +1,40 @@
-import React, { useState } from "react";
-import "../CSS/Navbar.css";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from "react"; 
+import "../CSS/Navbar.css"
 
 export const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
   return (
-<nav>
-  {/* Left-aligned logo */}
-  <Link to="./Home" className="logo">
-    <img src="images/streamium.png" alt="Logo" />
-  </Link>
+    <nav>
+      <div className="logo-1">
+      <a href="/" className="logo">
+        <img src="images/streamium.png" alt="Logo" />
+      </a>
+      </div>
 
-  {/* Centered nav links */}
-  <ul className={menuOpen ? "open" : ""}>
+      <ul className={menuOpen ? "open" : ""}>
+        <li>
+          <a href="/services">Services</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
 
-    <li>
-      <NavLink to="/services">Services</NavLink>
-    </li>
-    <li>
-      <NavLink to="/about">About</NavLink>
-    </li>
-    <li>
-      <NavLink to="/contact">Contact</NavLink>
-    </li>
-  </ul>
+      <div className="logo-button-container">
+        <button className="btn-1">
+          <a href="https://wa.me/qr/2WXRBEQMIZKEB1">Free Trial</a>
+        </button>
+      </div>
 
-  {/* Right-aligned button */}
-  <div className="logo-button-container">
-    <button className="btn-1">
-      <a href="https://wa.me/qr/2WXRBEQMIZKEB1">Free Trial</a>
-    </button>
-  </div>
-
-  {/* Mobile menu icon */}
-  <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</nav>
+      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
   );
-};
+}

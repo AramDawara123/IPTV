@@ -1,4 +1,4 @@
-/* Reusable values */
+/* General styles for all screen sizes */
 nav {
     margin: 0;
     padding: 0;
@@ -8,17 +8,18 @@ nav {
     align-items: center;
     height: 69px;
     background-color: black;
-}
-
-nav .logo {
-    margin-left: 1.5rem;
-    height: 69px;
-    width: 100px;
+    z-index: 1000;
+    position: relative;
 }
 
 nav .logo img {
-    height: 69px;
-    width: auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+nav .logo-1 {
+    height: 60px;
 }
 
 nav ul {
@@ -27,6 +28,12 @@ nav ul {
     flex-wrap: wrap;
     list-style: none;
     flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
 }
 
 nav ul li a {
@@ -40,6 +47,7 @@ nav ul li a {
 
 nav .logo-button-container {
     margin-right: 1.5rem;
+    text-decoration: none;
 }
 
 button {
@@ -52,10 +60,14 @@ button {
 
 .btn-1 {
     font-weight: 700;
-    fill: #000001;
     color: #000001;
     background-color: #95DD4C;
     border-radius: 28px;
+}
+
+.btn-1 a {
+    text-decoration: none;
+    color: #000001;
 }
 
 nav .menu {
@@ -67,6 +79,7 @@ nav .menu {
     justify-content: space-between;
     width: 2.25rem;
     height: 2rem;
+    cursor: pointer;
 }
 
 nav .menu span {
@@ -76,58 +89,138 @@ nav .menu span {
     border-radius: 0.2rem;
 }
 
-button a {
-    text-decoration: none;
-    cursor: pointer;
-    color: #000;
-}
-
-/* Adjustments for button centering */
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-/* Responsiveness for mobile screens */
-@media (max-width: 480px) {
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        display: flex;
+    }
+    
     nav .menu {
         display: flex;
     }
-
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
+    
     nav ul {
         display: none;
-        flex-direction: column;
         width: 100%;
         margin-bottom: 0.25rem;
+        background-color: black;
     }
-
     nav ul.open {
         display: flex;
     }
-
     nav ul li {
         width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    nav .logo-1 {
+        display: flex;
+        margin-right: auto;
+        margin-left: 0;
+    }
+    
+    nav .logo-button-container { 
+        width: 80%;
+        display: flex;
+        position: absolute;
+        z-index: -2;
+        justify-content: center;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+    .btn-1 {
+        
+        max-width: 50%;
+    }
+    
+    button {
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        display: flex;
+    }
+    
+    nav .menu {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+        width: 100%;
+        margin-bottom: 0.25rem;
+        background-color: black;
+    }
+    nav ul.open {
+        display: flex;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    nav .logo-1 {
+        display: flex;
+        margin-right: auto;
+        margin-left: 0;
+    }
+    
+    nav .logo-button-container { 
+        width: 80%;
+        display: flex;
+        position: absolute;        
+        z-index: -2;
+        justify-content: center;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+    .btn-1 {
+        
+        max-width: 50%;
+    }
+    
+    button {
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: flex;
     }
 
     nav ul li a {
-        margin: 0.2rem 0.5rem;
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
     }
 
     nav .logo-button-container {
-        order: 2;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-right: 0;
-    }
-
-    .btn-1 {
-        width: 80%;
+        margin-right: 2rem;
     }
 }
