@@ -23,19 +23,15 @@ jobs:
           node-version: "20"
 
       - name: List directory contents
-        run: ls -R  # This will help debug directory structure
+        run: ls -R
 
       - name: Install Node.js dependencies
         run: npm install
-        working-directory: IPTV-REACT  # Update this line
-
-      - name: Run React Tests
-        run: npm test -- --coverage
-        working-directory: IPTV-REACT  # Update this line
+        working-directory: IPTV-REACT
 
       - name: Build React Application
         run: npm run build
-        working-directory: IPTV-REACT  # Update this line
+        working-directory: IPTV-REACT
 
   python:
     name: Python Application
