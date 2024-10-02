@@ -24,15 +24,15 @@ jobs:
 
       - name: Install Node.js dependencies
         run: npm install
-        working-directory: ./iptv/iptv-react
+        working-directory: ./IPTV/IPTV-REACT
 
-      - name: Run React Tests
+      - name: Run REACT Tests
         run: npm test -- --coverage
-        working-directory: ./iptv/iptv-react
+        working-directory: ./IPTV/IPTV-REACT
 
-      - name: Build React Application
+      - name: Build REACT Application
         run: npm run build
-        working-directory: ./iptv/iptv-react
+        working-directory: ./IPTV/IPTV-REACT
 
   python:
     name: Python Application
