@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/FAQ.css";
 
 interface FAQItem {
@@ -34,12 +34,23 @@ const faqData: FAQItem[] = [
 ];
 
 const FAQ: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <div className="faq">
       <h1>Frequently Asked Questions (FAQ)</h1>
       {faqData.map((item, index) => (
-        <div className="faq-item" key={index}>
-          <div className="faq-question">{item.question}</div>
+        <div
+          className={`faq-item ${activeIndex === index ? "active" : ""}`}
+          key={index}
+        >
+          <div className="faq-question" onClick={() => toggleFAQ(index)}>
+            {item.question}
+          </div>
           <div className="faq-answer">{item.answer}</div>
         </div>
       ))}

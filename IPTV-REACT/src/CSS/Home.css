@@ -62,13 +62,7 @@ body {
     position: relative;
 }
 
-.color-overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-}
+
 
 .hero {
     text-align: center;
@@ -169,6 +163,13 @@ body {
 
 .work {
     text-align: center;
+}
+
+.bottom-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35px;
 }
 
 /* how does it work section */

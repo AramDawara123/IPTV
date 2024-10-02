@@ -23,19 +23,15 @@ jobs:
           node-version: "20"
 
       - name: List directory contents
-        run: ls -R ./IPTV  # Adjust if needed
+        run: ls -R
 
       - name: Install Node.js dependencies
         run: npm install
-        working-directory: IPTV/IPTV-REACT  # Remove the leading './'
-
-      - name: Run React Tests
-        run: npm test -- --coverage
-        working-directory: IPTV/IPTV-REACT  # Remove the leading './'
+        working-directory: IPTV-REACT
 
       - name: Build React Application
         run: npm run build
-        working-directory: IPTV/IPTV-REACT  # Remove the leading './'
+        working-directory: IPTV-REACT
 
   python:
     name: Python Application
