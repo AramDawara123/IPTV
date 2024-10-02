@@ -23,7 +23,7 @@ jobs:
           node-version: "20"
 
       - name: List directory contents
-        run: ls -R ./IPTV
+        run: ls -R
 
       - name: Install Node.js dependencies
         run: npm install
