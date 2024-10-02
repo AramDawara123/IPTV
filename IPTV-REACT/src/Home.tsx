@@ -5,6 +5,71 @@ import App from "../src/pages/App";
 import "./CSS/Home.css";
 import FAQ from "./pages/FAQ";
 
+interface Plan {
+  duration: string;
+  price: string;
+  popular?: boolean;
+  features: string[];
+}
+
+const plans: Plan[] = [
+  {
+    duration: "1 Month",
+    price: "$8.99",
+    popular: false,
+    features: [
+      "12 Hours Free Trial",
+      "HD/4K/8K IPTV",
+      "+5,000 Channels",
+      "+25,000 VOD",
+      "7 days money back guarantee",
+    ],
+  },
+  {
+    duration: "1 Year",
+    price: "$89.99",
+    popular: true,
+    features: [
+      "24 Hours Free Trial",
+      "HD/4K IPTV",
+      "+10,000 Channels",
+      "+50,000 VOD",
+      "14 days money back guarantee",
+    ],
+  },
+  {
+    duration: "2 Years",
+    price: "$159.99",
+    popular: false,
+    features: [
+      "48 Hours Free Trial",
+      "4K/8K IPTV",
+      "+18,000 Channels",
+      "+100,000 VOD",
+      "30 days money back guarantee",
+    ],
+  },
+];
+
+interface PlanProps {
+  plan: Plan;
+  index: number;
+}
+
+const PlanComponent: React.FC<PlanProps> = ({ plan, index }) => (
+  <div className={`plan ${plan.popular ? "popular" : ""}`} key={index}>
+    <h3>{plan.duration}</h3>
+    <div className="plan-price">{plan.price}</div>
+    <ul>
+      {plan.features.map((feature, featureIndex) => (
+        <li key={featureIndex}>✓ {feature}</li>
+      ))}
+    </ul>
+    <button className="btn-2">Buy Now</button>
+    <img className="bottom-logo" src="/images/devices-1.webp" alt="Devices" />
+  </div>
+);
+
 const Home: React.FC = () => {
   return (
     <div className="container">
@@ -12,7 +77,8 @@ const Home: React.FC = () => {
         <h1 className="All-In-One">All-In-One Premium IPTV Service</h1>
         <p>
           Enjoy your time with excellent image quality up to 4K, on any device,
-          anytime and anywhere,<br />
+          anytime and anywhere,
+          <br />
           with over +18,000 channels, +88,000 VOD and uptime 100%
         </p>
         <a href="https://wa.me/qr/2WXRBEQMIZKEB1" className="free-trial-btn">
@@ -21,7 +87,6 @@ const Home: React.FC = () => {
         <div className="devices">
           <img src="/images/devices-4.png" alt="Devices" />
         </div>
-        <div className="color-overlay"></div>
       </section>
 
       <div className="features">
@@ -29,18 +94,18 @@ const Home: React.FC = () => {
           {
             img: "/images/earth_asia.png",
             title: "Channels from 115 countries worldwide",
-            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy/ Hindi / Arabic / Turkey...)"
+            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy/ India / Dubai / Turkey / China ...)",
           },
           {
             img: "/images/moneybag.png",
             title: "7 days money back guarantee",
-            text: "Within 7 days of your purchase you have the option to cancel our IPTV subscription if you are not satisfied. Then you will receive a full refund from us."
+            text: "Within 7 days of your purchase you have the option to cancel our IPTV subscription if you are not satisfied. Then you will receive a full refund from us.",
           },
           {
             img: "/images/star-struck.png",
             title: "High Quality HD/FHD/4K/8K",
-            text: "We offer all image qualities to view our IPTV service everywhere, regardless of your network speed on: Mobile / TV / Android box / PC ..."
-          }
+            text: "We offer all image qualities to view our IPTV service everywhere, regardless of your network speed on: Mobile / TV / Android box / PC ...",
+          },
         ].map((feature, index) => (
           <div className="feature" key={index}>
             <img src={feature.img} alt={feature.title} />
@@ -76,7 +141,7 @@ const Home: React.FC = () => {
           "images/brand_item18-150x46-1-1.webp",
           "images/brand_item21-150x46-1-1.webp",
           "images/brand_item22-150x46-1-1.webp",
-          "images/brand_item15-150x46-1-1.webp",
+          "images/brand_item23.webp",
         ].map((src, index) => (
           <div key={index} className={`itemRight item${index + 1}`}>
             <img src={src} alt="" />
@@ -87,26 +152,8 @@ const Home: React.FC = () => {
       <section className="pricing">
         <h1>Choose your plan</h1>
         <div className="pricing-plans">
-          {[
-            { duration: "2 Years", price: "€69.95" },
-            { duration: "1 Year", price: "€39.95", popular: true },
-            { duration: "6 Months", price: "€30.95" },
-          ].map((plan, index) => (
-            <div className={`plan ${plan.popular ? "popular" : ""}`} key={index}>
-              <h3>{plan.duration}</h3>
-              <div className="plan-price">{plan.price}</div>
-              <ul>
-                <li>✓ 24 Hours Free Trial</li>
-                <li>✓ HD/4K/8K IPTV</li>
-                <li>✓ +18,000 Channels</li>
-                <li>✓ +100,000 VOD</li>
-                <li>✓ Watch Channels</li>
-                <li>✓ 7 days money back guarantee</li>
-              </ul>
-              <button className="btn-2">Buy Now</button>
-              <p>Ready within 5 to 7 min</p>
-              <img src="/images/devices-1.webp" alt="Devices" />
-            </div>
+          {plans.map((plan, index) => (
+            <PlanComponent key={index} plan={plan} index={index} />
           ))}
         </div>
       </section>
@@ -118,34 +165,36 @@ const Home: React.FC = () => {
             {
               number: "1",
               title: "Place your order",
-              text: "Place your order by choosing your preferred subscription period : 6, 12 or 24 months.",
-              icon: "🛍️"
+              text: "Place your order by choosing your preferred subscription period: 1, 12 or 24 months.",
+              icon: "🛍️",
             },
             {
               number: "2",
               title: "Get your account",
               text: "This process can take 15 to 30 minutes. Please check your inbox and your spam folder. To speed up the process, please contact us via Whatsapp.",
-              icon: "👤"
+              icon: "👤",
             },
             {
               number: "3",
               title: "Enjoy your IPTV service!",
               text: "Enjoy all channels, films and series now!",
-              icon: "📺"
-            }
+              icon: "📺",
+            },
           ].map((step, index) => (
             <div className="step" key={index}>
               <div className="icon">{step.icon}</div>
               <h2>{`${step.number}. ${step.title}`}</h2>
               <p>{step.text}</p>
-              {step.number === "3" && <button className="free-trial">Free Trial</button>}
+              {step.number === "3" && (
+                <button className="free-trial">Free Trial</button>
+              )}
             </div>
           ))}
         </div>
       </div>
 
       <div className="faq-container">
-      <FAQ />
+        <FAQ />
       </div>
 
       <div className="whatsapp-support-1">
@@ -156,8 +205,15 @@ const Home: React.FC = () => {
 
       <div className="support">
         <div className="support-text">
-          <svg className="support-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path fill="#fff" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224-99.6 224-222 0-59.3-23-115.6-60.9-157.9z" />
+          <svg
+            className="support-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              fill="#fff"
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224-99.6 224-222 0-59.3-23-115.6-60.9-157.9z"
+            />
           </svg>
           <p>Contact us for support</p>
         </div>
