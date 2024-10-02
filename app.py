@@ -33,6 +33,7 @@ def register():
         user = User(username=username, password=password)
         db.session.add(user)
         db.session.commit()
+        return redirect(url_for('http://localhost:5173/home'))
 
     return render_template('register.html')
 app.route('/login', methods=['GET', 'POST'])
