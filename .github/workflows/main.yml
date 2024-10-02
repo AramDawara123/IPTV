@@ -23,19 +23,19 @@ jobs:
           node-version: "20"
 
       - name: List directory contents
-        run: ls -R  # Adjust if needed
+        run: ls -R  # This will help debug directory structure
 
       - name: Install Node.js dependencies
         run: npm install
-        working-directory: IPTV/IPTV-REACT  # Remove the leading './'
+        working-directory: IPTV-REACT  # Update this line
 
       - name: Run React Tests
         run: npm test -- --coverage
-        working-directory: IPTV/IPTV-REACT  # Remove the leading './'
+        working-directory: IPTV-REACT  # Update this line
 
       - name: Build React Application
         run: npm run build
-        working-directory: IPTV/IPTV-REACT  # Remove the leading './'
+        working-directory: IPTV-REACT  # Update this line
 
   python:
     name: Python Application
