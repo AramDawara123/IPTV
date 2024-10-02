@@ -28,14 +28,14 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+        username = request.form.get('username')
+        password = request.form.get('password')
         user = User(username=username, password=password)
         db.session.add(user)
         db.session.commit()
-        return redirect(url_for('http://localhost:5173/home'))
-
+        return redirect("http://localhost:5173")
     return render_template('register.html')
+
 app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
