@@ -172,11 +172,14 @@ body {
     margin-left: 35px;
 }
 
+.flip-card-section {
+    margin-top: 3rem;
+}
+
 /* how does it work section */
 .how-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 45px;
