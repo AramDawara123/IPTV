@@ -24,18 +24,18 @@ body {
     text-decoration: none;
   }
   
-  .login-wrap {
-    width: 100%;
-    margin: auto;
-    max-width: 525px;
-    min-height: 670px;
-    position: relative;
-    background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg)
-      no-repeat center;
-    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-  .login-html {
+.login-wrap {
+  width: 100%;
+  margin: auto;
+  max-width: 525px;
+  min-height: 670px;
+  position: relative;
+  background: url('https://t4.ftcdn.net/jpg/08/45/10/75/360_F_845107561_vNhctGj9V9wtYwUTXK4AxyjyGuRDFmXL.jpg') no-repeat center;
+  background-size: cover;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-html {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -109,11 +109,11 @@ body {
     font-size: 12px;
   }
   .login-form .group .button {
-    background: #1161ee;
+    background: #487715;
     cursor: pointer;
   }
   .login-form .group .button:hover {
-      background:#1454c4;
+    background: #aacb8b;
       cursor: pointer;
     }
   .login-form .group label .icon {
