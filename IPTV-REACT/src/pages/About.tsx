@@ -80,20 +80,20 @@ const AboutUs: React.FC = () => {
           <div className="team-member">
             <h3>Akshay Dhondai</h3>
             <p>Front-End Developer</p>
-            <a href="https://github.com/Akshay12184"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://www.linkedin.com/in/akshay-dhondai/"><img src="images/211904_social_github_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/akshay-dhondai/"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://github.com/Akshay12184"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
           <div className="team-member">
             <h3>Adil Harhour</h3>
             <p>Front-End Developer</p>
-            <a href="https://github.com/Aharhour"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://www.linkedin.com/in/adil-harhour-3386391b0/"><img src="images/211904_social_github_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/adil-harhour-3386391b0/ "><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://github.com/Aharhour"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
           <div className="team-member">
             <h3>Jesse Bogaart</h3>
             <p>Back-End Developer</p>
-            <a href="https://github.com/frkyscience"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://www.linkedin.com/in/jesse-bogaart/"><img src="images/211904_social_github_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/jesse-bogaart/ "><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://github.com/frkyscience"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
           <div className="team-member">
             <h3>Ties Van Oldenborgh</h3>
