@@ -208,10 +208,10 @@ button {
 .how-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 45px;
+    
 }
 
 .step-one {

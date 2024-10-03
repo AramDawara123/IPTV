@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
 import "./CSS/Home.css";
 import FAQ from "./pages/FAQ";
+import CardFlip from './pages/Card-flip'; // Import CardFlip
 
 interface Plan {
   duration: string;
@@ -73,6 +74,7 @@ const PlanComponent: React.FC<PlanProps> = ({ plan, index }) => (
 const Home: React.FC = () => {
   return (
     <div className="container">
+      {/* Hero Section */}
       <section className="hero">
         <h1 className="All-In-One">All-In-One Premium IPTV Service</h1>
         <p>
@@ -89,6 +91,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Feature Section */}
       <div className="features">
         {[
           {
@@ -115,40 +118,7 @@ const Home: React.FC = () => {
         ))}
       </div>
 
-      <div className="wrapper">
-        {[
-          "images/brand_item05-150x46-1-1.webp",
-          "images/brand_item06-150x46-1-1.webp",
-          "images/brand_item08-150x46-1-1.webp",
-          "images/brand_item09-150x46-1-1.webp",
-          "images/brand_item10-150x46-1-1.webp",
-          "images/brand_item11-1.webp",
-          "images/brand_item12-1.webp",
-          "images/brand_item13-150x46-1-1.webp",
-        ].map((src, index) => (
-          <div key={index} className={`itemLeft item${index + 1}`}>
-            <img src={src} alt="" />
-          </div>
-        ))}
-      </div>
-
-      <div className="wrapper">
-        {[
-          "images/brand_item14-150x46-1-1.webp",
-          "images/brand_item15-150x46-1-1.webp",
-          "images/brand_item16-150x46-1-1.webp",
-          "images/brand_item17-150x46-1-1.webp",
-          "images/brand_item18-150x46-1-1.webp",
-          "images/brand_item21-150x46-1-1.webp",
-          "images/brand_item22-150x46-1-1.webp",
-          "images/brand_item23.webp",
-        ].map((src, index) => (
-          <div key={index} className={`itemRight item${index + 1}`}>
-            <img src={src} alt="" />
-          </div>
-        ))}
-      </div>
-
+      {/* Pricing Section */}
       <section className="pricing">
         <h1>Choose your plan</h1>
         <div className="pricing-plans">
@@ -158,6 +128,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Flip Card Section */}
+      <section className="flip-card-section">
+        <h1>Flip card movie information</h1>
+        <CardFlip />
+      </section>
+
+      {/* How it works Section */}
       <div className="how-container">
         <h1 className="work">How does it work?</h1>
         <div className="step-one">
@@ -193,10 +170,13 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+
+      {/* FAQ Section */}
       <div className="faq-container">
         <FAQ />
       </div>
 
+      {/* Support Section */}
       <div className="whatsapp-support-1">
         <a href="https://wa.me/qr/2WXRBEQMIZKEB1" target="_blank" rel="nofollow">
           <span className="whatsapp-button"></span>

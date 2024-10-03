@@ -72,44 +72,33 @@ const AboutUs: React.FC = () => {
         <h2>Our Team</h2>
         <div className="team-grid">
           <div className="team-member">
-            <img
-              src="https://example.com/images/ceo.jpg"
-              alt="CEO portrait"
-              width="150"
-              height="150"
-            />
-            <h3>Jane Doe</h3>
-            <p>CEO & Founder</p>
+            <h3>Aram Dawara</h3>
+            <p>Front-End Developer</p>
+            <a href="https://github.com/AramDawara123"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/aram-dawara-528637202/"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
           <div className="team-member">
-            <img
-              src="https://example.com/images/cto.jpg"
-              alt="CTO portrait"
-              width="150"
-              height="150"
-            />
-            <h3>John Smith</h3>
-            <p>CTO</p>
+            <h3>Akshay Dhondai</h3>
+            <p>Front-End Developer</p>
+            <a href="https://github.com/Akshay12184"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/akshay-dhondai/"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
           <div className="team-member">
-            <img
-              src="https://example.com/images/cmo.jpg"
-              alt="CMO portrait"
-              width="150"
-              height="150"
-            />
-            <h3>Emily Brown</h3>
-            <p>CMO</p>
+            <h3>Adil Harhour</h3>
+            <p>Front-End Developer</p>
+            <a href="https://github.com/Aharhour"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/adil-harhour-3386391b0/"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
           <div className="team-member">
-            <img
-              src="https://example.com/images/coo.jpg"
-              alt="COO portrait"
-              width="150"
-              height="150"
-            />
-            <h3>Michael Lee</h3>
-            <p>COO</p>
+            <h3>Jesse Bogaart</h3>
+            <p>Back-End Developer</p>
+            <a href="https://github.com/frkyscience"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/jesse-bogaart/"><img src="images/211904_social_github_icon.png" alt="" /></a>
+          </div>
+          <div className="team-member">
+            <h3>Ties Van Oldenborgh</h3>
+            <p>Back-End Developer</p>
+            <a href="https://github.com/Tiesvo"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
         </div>
 
