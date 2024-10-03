@@ -46,6 +46,7 @@ const Services: React.FC = () => {
         setFilteredMovies(data);
       } catch (error) {
         setError("Error fetching data");
+        console.log(error)
       } finally {
         setIsLoading(false);
       }
