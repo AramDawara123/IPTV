@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
 import "./CSS/Home.css";
 import FAQ from "./pages/FAQ";
-import CardFlip from './pages/Card-flip'; // Import CardFlip
+import CardFlip from './pages/Card-flip';
 
 interface Plan {
   duration: string;
@@ -126,12 +126,6 @@ const Home: React.FC = () => {
             <PlanComponent key={index} plan={plan} index={index} />
           ))}
         </div>
-      </section>
-
-      {/* Flip Card Section */}
-      <section className="flip-card-section">
-        <h1>Flip card movie information</h1>
-        <CardFlip />
       </section>
 
       {/* How it works Section */}
