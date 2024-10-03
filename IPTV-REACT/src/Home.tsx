@@ -4,7 +4,6 @@ import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
 import "./CSS/Home.css";
 import FAQ from "./pages/FAQ";
-import CardFlip from './pages/Card-flip'; // Import CardFlip
 
 interface Plan {
   duration: string;
@@ -20,7 +19,7 @@ const plans: Plan[] = [
     popular: false,
     features: [
       "12 Hours Free Trial",
-      "HD/4K/8K IPTV",
+      "HD IPTV",
       "+5,000 Channels",
       "+25,000 VOD",
       "7 days money back guarantee",
@@ -44,7 +43,7 @@ const plans: Plan[] = [
     popular: false,
     features: [
       "48 Hours Free Trial",
-      "4K/8K IPTV",
+      "HD/4K/8K IPTV",
       "+18,000 Channels",
       "+100,000 VOD",
       "30 days money back guarantee",
@@ -97,7 +96,7 @@ const Home: React.FC = () => {
           {
             img: "/images/earth_asia.png",
             title: "Channels from 115 countries worldwide",
-            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy/ India / Dubai / Turkey / China ...)",
+            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy / India / Dubai / Turkey / China ...)",
           },
           {
             img: "/images/moneybag.png",
@@ -126,12 +125,6 @@ const Home: React.FC = () => {
             <PlanComponent key={index} plan={plan} index={index} />
           ))}
         </div>
-      </section>
-
-      {/* Flip Card Section */}
-      <section className="flip-card-section">
-        <h1>Flip card movie information</h1>
-        <CardFlip />
       </section>
 
       {/* How it works Section */}
@@ -198,6 +191,10 @@ const Home: React.FC = () => {
           <p>Contact us for support</p>
         </div>
       </div>
+
+      <footer>
+        <p>&copy; allrights reserved 2024</p>
+        </footer>
     </div>
   );
 };
