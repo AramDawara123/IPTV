@@ -36,35 +36,34 @@ const AboutUs: React.FC = () => {
         <div className="timeline">
           <div className="timeline-item left">
             <div className="content">
-              <h3>2015</h3>
+              <h3>2024</h3>
               <p>Founded with a vision to revolutionize digital entertainment</p>
             </div>
           </div>
           <div className="timeline-item right">
             <div className="content">
-              <h3>2017</h3>
+              <h3>2025</h3>
               <p>Launched our first streaming platform with 1000+ channels</p>
             </div>
           </div>
           <div className="timeline-item left">
             <div className="content">
-              <h3>2019</h3>
+              <h3>2027</h3>
               <p>
-                Expanded to international markets, reaching 1 million
-                subscribers
+                Expanded to international markets, getting more people on our site
               </p>
             </div>
           </div>
           <div className="timeline-item right">
             <div className="content">
-              <h3>2021</h3>
+              <h3>2028</h3>
               <p>Introduced AI-powered content recommendations</p>
             </div>
           </div>
           <div className="timeline-item left">
             <div className="content">
-              <h3>2023</h3>
-              <p>Celebrating 5 million active users worldwide</p>
+              <h3>2030</h3>
+              <p>Celebrating 1 million active users worldwide</p>
             </div>
           </div>
         </div>
