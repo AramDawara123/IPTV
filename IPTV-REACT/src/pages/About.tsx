@@ -73,8 +73,8 @@ const AboutUs: React.FC = () => {
           <div className="team-member">
             <h3>Aram Dawara</h3>
             <p>Front-End Developer</p>
-            <a href="https://github.com/AramDawara123"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://www.linkedin.com/in/aram-dawara-528637202/"><img src="images/211904_social_github_icon.png" alt="" /></a>
+            <a href="https://www.linkedin.com/in/aram-dawara-528637202/"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
+            <a href="https://github.com/AramDawara123"><img src="images/211904_social_github_icon.png" alt="" /></a>
           </div>
           <div className="team-member">
             <h3>Akshay Dhondai</h3>
