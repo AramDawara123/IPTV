@@ -27,7 +27,7 @@ with app.app_context():
 # Root route
 @app.route('/')
 def index():
-    return 'Hello'
+    return redirect(url_for('register'))
 
 
 # Register route
@@ -52,7 +52,6 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        flash("Registration successful! Please log in.", "success")
         return redirect("http://127.0.0.1:5011/register")
 
     return render_template('register.html')
@@ -70,7 +69,7 @@ def login():
 
     if user and user.password == password:
         # Successful login, redirect to the desired page
-        return redirect("http://localhost:5173")
+        return redirect("http://localhost:5174")
     else:
         # Invalid login attempt
         return "Invalid credentials", 401
