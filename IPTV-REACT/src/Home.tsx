@@ -218,6 +218,10 @@ const Home: React.FC = () => {
           <p>Contact us for support</p>
         </div>
       </div>
+
+      <footer>
+        <p>&copy; allrights reserved 2024</p>
+        </footer>
     </div>
   );
 };
