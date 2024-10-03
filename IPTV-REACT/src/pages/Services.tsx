@@ -7,6 +7,7 @@ interface Movie {
   cover: string;
   cast: string;
   releaseDate: string;
+  plot: string;
   rating: number;
 }
 
@@ -116,7 +117,8 @@ const CardFlip: React.FC<CardFlipProps> = ({ movie }) => {
           <p className="paragraph">Rating: {movie.rating} / 10</p>
         </div>
         <div className="card-back">
-          {/* Inhoud van de achterkant van de kaart */}
+        <h2 className="heading">Plot:</h2>
+        <p className="paragraph">{movie.plot}</p>
         </div>
       </div>
     </button>
