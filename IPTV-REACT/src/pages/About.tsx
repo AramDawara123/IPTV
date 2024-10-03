@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           <img
-            src="https://example.com/images/streaming-service.jpg"
+            src="images/iptv-about-us.png"
             alt="A person enjoying IPTV streaming service on a tablet"
             className="about-image"
             width="600"
