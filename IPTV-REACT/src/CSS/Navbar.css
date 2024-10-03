@@ -34,15 +34,27 @@ nav ul {
 
 nav ul li {
     display: flex;
+    border-radius: 20px;
+    background-color: #000000;
+    transition: background-color 0.5s, color 0.5s, ease-in 0.5s;
+}
+
+nav ul li:hover {
+    background-color: #ffffff;
+    color: #000000;
 }
 
 nav ul li a {
-    color: #fff090;
+    color: #6bbc43;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    transition: transform 0.3s ease, background-color 0.3s ease;
     display: inline-block;
     text-decoration: none;
+    transition: color 0.5s;
+}
+
+nav ul li:hover a {
+    color: #6bbc43;
 }
 
 nav .logo-button-container {

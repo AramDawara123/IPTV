@@ -172,11 +172,14 @@ body {
     margin-left: 35px;
 }
 
+.flip-card-section {
+    margin-top: 3rem;
+}
+
 /* how does it work section */
 .how-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 45px;
@@ -200,6 +203,7 @@ body {
 }
 
 .step h2 {
+    color: white;
     font-size: 1.5em;
     margin-bottom: 15px;
 }
@@ -253,16 +257,8 @@ p {
 
 /* footer */
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;  
+    background-color: #000;
 }
-
-footer p {
-    margin: 0;
-}
-
 
 /* whatsapp support floating icon */
 .whatsapp-button {

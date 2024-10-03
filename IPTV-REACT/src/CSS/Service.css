@@ -1,84 +1,208 @@
+/* Stijl voor de introsectie van de pagina */
 .intropage-service {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px 0;
 }
 
+/* Algemene stijlregels voor de gehele pagina */
 * {
-    color: white
+    color: white;
+    box-sizing: border-box;
 }
+
+/* Stijl voor de lijst met films */
 .cardlist__movies {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-}
-.card {
-    border: 1px solid #ddd;
-    padding: 35px;
-    width: 310px;
-    border-radius: 20px;
+    gap: 40px;
 }
 
+/* Basisstijl voor individuele filmkaarten */
+.card {
+    width: 320px; 
+    height: 640px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Schalingseffect bij hover op de kaart */
+.card:hover {
+    transform: scale(1.07);
+}
+
+/* Stijl voor de filmafbeeldingen */
 .movie__image {
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
+/* Stijl voor de titel van de film */
 .heading {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
+    margin-top: 15px;
 }
 
+/* Stijl voor de paragraaftekst */
 .paragraph {
-    font-size: 12px;
+    font-size: 14px;
+    margin: 5px 0;
 }
+
+/* Stijl voor de zoekbalk en knop */
 .searchbar {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px 0;
 }
 
+/* Stijl voor de zoekknop */
 .search-btn {
     border-radius: 15px;
     background-color: #95DD4C;
-    font-size: 10px;
+    font-size: 14px;
     color: black;
+    margin-left: 10px;
+    padding: 8px 15px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Hover effect voor de zoekknop */
+.search-btn:hover {
+    background-color: #82CC3D;
+    transform: translateY(-2px);
+}
+
+.hover-text {
+    position: absolute;
+    top: 10px;  /* Pas aan voor de gewenste afstand van de bovenkant */
+    right: 10px;  /* Pas aan voor de gewenste afstand van de rechterkant */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparante achtergrond */
+    color: white; /* Witte tekstkleur */
+    padding: 5px 10px; /* Ruimte rond de tekst */
+    border-radius: 5px; /* Ronde hoeken */
+    font-size: 14px; /* Tekstgrootte */
+    opacity: 0; /* Begin met een onzichtbare tekst */
+    transition: opacity 0.3s; /* Vervagingseffect bij hover */
+}
+
+/* Toon de hover-tekst bij hover op de kaart */
+.card-container:hover .hover-text {
+    opacity: 1; /* Maak de tekst zichtbaar bij hover */
+}
+
+/* Stijl voor de invoer in de zoekbalk */
 .input {
     text-align: center;
     border-radius: 20px;
     font-size: 15px;
+    padding: 8px;
     color: black;
+    width: 250px; 
 }
 
-.flip-btn {
-    background-color: #95DD4C;
-    color: white;
+/* Flip card container */
+.card-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
-.searchbar {
+
+/* Stijl voor de flip card inner container */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d; 
+}
+
+/* Flip animatie bij het toevoegen van de 'flipped' klasse */
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Stijl voor de knoppen binnen de kaartcontainer */
+button.card-container {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none; 
+}
+
+/* Focusstijl voor knoppen */
+button.card-container:focus {
+    outline: none; 
+}
+
+/* Front en back zijde van de kaart */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 15px;
+    padding: 15px; 
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    color: white; 
+    transition: background-color 0.5s, box-shadow 0.5s;
 }
 
-.search-btn {
-    border-radius: 15px;
-    background-color: #95DD4C;
-    font-size: 10px;
-    color: black;
+/* Stijl voor de voorkant van de kaart */
+.card-front {
+    background-color: #222;
 }
 
-.input {
-    text-align: center;
-    border-radius: 20px;
-    font-size: 15px;
-    color: black;
+/* Stijl voor de achterkant van de kaart */
+.card-back {
+    background-color: #1d1d1d;
+    transform: rotateY(180deg);
 }
 
-.flip-btn {
-    background-color: #95DD4C;
-    color: white;
+/* Schaduw voor de kaart bij hover */
+.card-container:hover .card-front {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-container:hover .card-back {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsieve stijlen voor kleinere schermen */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        height: 400px;
+    }
+
+    .movie__image {
+        height: 250px;
+    }
+
+    .heading {
+        font-size: 18px;
+    }
+
+    .paragraph {
+        font-size: 12px;
+    }
+
+    .input {
+        width: 100%;
+    }
 }

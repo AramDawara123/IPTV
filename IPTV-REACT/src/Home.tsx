@@ -19,7 +19,7 @@ const plans: Plan[] = [
     popular: false,
     features: [
       "12 Hours Free Trial",
-      "HD/4K/8K IPTV",
+      "HD IPTV",
       "+5,000 Channels",
       "+25,000 VOD",
       "7 days money back guarantee",
@@ -43,7 +43,7 @@ const plans: Plan[] = [
     popular: false,
     features: [
       "48 Hours Free Trial",
-      "4K/8K IPTV",
+      "HD/4K/8K IPTV",
       "+18,000 Channels",
       "+100,000 VOD",
       "30 days money back guarantee",
@@ -73,6 +73,7 @@ const PlanComponent: React.FC<PlanProps> = ({ plan, index }) => (
 const Home: React.FC = () => {
   return (
     <div className="container">
+      {/* Hero Section */}
       <section className="hero">
         <h1 className="All-In-One">All-In-One Premium IPTV Service</h1>
         <p>
@@ -89,12 +90,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Feature Section */}
       <div className="features">
         {[
           {
             img: "/images/earth_asia.png",
             title: "Channels from 115 countries worldwide",
-            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy/ India / Dubai / Turkey / China ...)",
+            text: "You can watch TV channels from around the world (Netherlands / Belgium / Germany / UK / Spain / Portugal / Poland / Italy / India / Dubai / Turkey / China ...)",
           },
           {
             img: "/images/moneybag.png",
@@ -131,7 +133,6 @@ const Home: React.FC = () => {
           </div>
         ))}
       </div>
-
       <div className="wrapper">
         {[
           "images/brand_item14-150x46-1-1.webp",
@@ -149,6 +150,7 @@ const Home: React.FC = () => {
         ))}
       </div>
 
+      {/* Pricing Section */}
       <section className="pricing">
         <h1>Choose your plan</h1>
         <div className="pricing-plans">
@@ -158,6 +160,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* How it works Section */}
       <div className="how-container">
         <h1 className="work">How does it work?</h1>
         <div className="step-one">
@@ -193,10 +196,13 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+
+      {/* FAQ Section */}
       <div className="faq-container">
         <FAQ />
       </div>
 
+      {/* Support Section */}
       <div className="whatsapp-support-1">
         <a href="https://wa.me/qr/2WXRBEQMIZKEB1" target="_blank" rel="nofollow">
           <span className="whatsapp-button"></span>
@@ -218,6 +224,10 @@ const Home: React.FC = () => {
           <p>Contact us for support</p>
         </div>
       </div>
+
+      <footer>
+        <p>&copy; allrights reserved 2024</p>
+        </footer>
     </div>
   );
 };
