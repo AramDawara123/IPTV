@@ -117,6 +117,39 @@ const Home: React.FC = () => {
         ))}
       </div>
 
+      <div className="wrapper">
+        {[
+          "images/brand_item05-150x46-1-1.webp",
+          "images/brand_item06-150x46-1-1.webp",
+          "images/brand_item08-150x46-1-1.webp",
+          "images/brand_item09-150x46-1-1.webp",
+          "images/brand_item10-150x46-1-1.webp",
+          "images/brand_item11-1.webp",
+          "images/brand_item12-1.webp",
+          "images/brand_item13-150x46-1-1.webp",
+        ].map((src, index) => (
+          <div key={index} className={`itemLeft item${index + 1}`}>
+            <img src={src} alt="" />
+          </div>
+        ))}
+      </div>
+      <div className="wrapper">
+        {[
+          "images/brand_item14-150x46-1-1.webp",
+          "images/brand_item15-150x46-1-1.webp",
+          "images/brand_item16-150x46-1-1.webp",
+          "images/brand_item17-150x46-1-1.webp",
+          "images/brand_item18-150x46-1-1.webp",
+          "images/brand_item21-150x46-1-1.webp",
+          "images/brand_item22-150x46-1-1.webp",
+          "images/brand_item23.webp",
+        ].map((src, index) => (
+          <div key={index} className={`itemRight item${index + 1}`}>
+            <img src={src} alt="" />
+          </div>
+        ))}
+      </div>
+
       {/* Pricing Section */}
       <section className="pricing">
         <h1>Choose your plan</h1>
