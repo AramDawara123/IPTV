@@ -123,7 +123,7 @@ const CardFlip: React.FC<CardFlipProps> = ({ movie }) => {
           <p className="paragraph">Rating: {movie.rating} / 10</p>
 
           {/* Hover tekst */}
-          <div className="hover-text">Klik om meer te lezen over de film ⓘ</div>
+          <div className="hover-text">Click to read more about the film ⓘ</div>
         </div>
         <div className="card-back">
           <h2 className="heading">Plot:</h2>
