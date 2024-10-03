@@ -1,5 +1,5 @@
 # from urllib import request
-from flask import Flask, jsonify, request, render_template, redirect
+from flask import Flask, jsonify, request, render_template, redirect, url_for
 import json
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -34,22 +34,29 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        username = request.form.get('username')
+        username = request.form.get('username').strip()
         password = request.form.get('password')
+        confirm_password = request.form.get('confirm_password')
 
-        # Check if user already exists
+        if password != confirm_password:
+            return redirect(url_for('register'))
+
+        if not username:
+            return redirect(url_for('register'))
+
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
-            return "User already exists", 400
+            return redirect(url_for('register'))
 
-        # Create and add the new user
         user = User(username=username, password=password)
         db.session.add(user)
         db.session.commit()
-        return redirect("http://localhost:5173")
 
-    # If GET request, render a registration form (adjust this for your UI)
+        flash("Registration successful! Please log in.", "success")
+        return redirect("http://127.0.0.1:5011/register")
+
     return render_template('register.html')
+
 
 
 # Login route
