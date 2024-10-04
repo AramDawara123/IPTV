@@ -32,7 +32,7 @@ const AboutUs: React.FC = () => {
           />
         </div>
 
-        <h2>Our Journey</h2>
+        <h2>Our Future</h2>
         <div className="timeline">
           <div className="timeline-item left">
             <div className="content">
@@ -43,21 +43,21 @@ const AboutUs: React.FC = () => {
           <div className="timeline-item right">
             <div className="content">
               <h3>2025</h3>
-              <p>Launched our first streaming platform with 1000+ channels</p>
+              <p>Launching our first streaming platform with 1000+ channels</p>
             </div>
           </div>
           <div className="timeline-item left">
             <div className="content">
               <h3>2027</h3>
               <p>
-                Expanded to international markets, getting more people on our site
+                Expanding into international markets, getting more people on our site
               </p>
             </div>
           </div>
           <div className="timeline-item right">
             <div className="content">
               <h3>2028</h3>
-              <p>Introduced AI-powered content recommendations</p>
+              <p>Introducing AI-powered content recommendations</p>
             </div>
           </div>
           <div className="timeline-item left">
@@ -76,10 +76,10 @@ const AboutUs: React.FC = () => {
           <p>Front-End Developer</p>
           <img src="./images/aram-pf.jpeg" alt="Aram Dawara" />
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/aram-dawara-528637202/" target="_blank" rel="noopener noreferrer">
+            <a className="LinkedIn" href="https://www.linkedin.com/in/aram-dawara-528637202/" target="_blank" rel="noopener noreferrer">
               <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
             </a>
-            <a href="https://github.com/AramDawara123" target="_blank" rel="noopener noreferrer">
+            <a className="GitHub" href="https://github.com/AramDawara123" target="_blank" rel="noopener noreferrer">
               <img src="images/211904_social_github_icon.png" alt="GitHub" />
             </a>
           </div>
@@ -90,10 +90,10 @@ const AboutUs: React.FC = () => {
           <p>Front-End Developer</p>
           <img src="./images/akshay-pf.jpeg" alt="Akshay Dhondai" />
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/akshay-dhondai/" target="_blank" rel="noopener noreferrer">
+            <a className="LinkedIn" href="https://www.linkedin.com/in/akshay-dhondai/" target="_blank" rel="noopener noreferrer">
               <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
             </a>
-            <a href="https://github.com/Akshay12184" target="_blank" rel="noopener noreferrer">
+            <a className="GitHub" href="https://github.com/Akshay12184" target="_blank" rel="noopener noreferrer">
               <img src="images/211904_social_github_icon.png" alt="GitHub" />
             </a>
           </div>
@@ -104,10 +104,10 @@ const AboutUs: React.FC = () => {
           <p>Front-End Developer</p>
           <img src="./images/adil-pf.jpeg" alt="Adil Harhour" />
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/adil-harhour-3386391b0/" target="_blank" rel="noopener noreferrer">
+            <a className="LinkedIn" href="https://www.linkedin.com/in/adil-harhour-3386391b0/" target="_blank" rel="noopener noreferrer">
               <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
             </a>
-            <a href="https://github.com/Aharhour" target="_blank" rel="noopener noreferrer">
+            <a className="GitHub" href="https://github.com/Aharhour" target="_blank" rel="noopener noreferrer">
               <img src="images/211904_social_github_icon.png" alt="GitHub" />
             </a>
           </div>
@@ -118,10 +118,10 @@ const AboutUs: React.FC = () => {
           <p>Back-End Developer</p>
           <img src="./images/jesse-pf.jpeg" alt="Jesse Bogaart" />
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/jesse-bogaart/" target="_blank" rel="noopener noreferrer">
+            <a className="LinkedIn" href="https://www.linkedin.com/in/jesse-bogaart/" target="_blank" rel="noopener noreferrer">
               <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
             </a>
-            <a href="https://github.com/frkyscience" target="_blank" rel="noopener noreferrer">
+            <a className="GitHub" href="https://github.com/frkyscience" target="_blank" rel="noopener noreferrer">
               <img src="images/211904_social_github_icon.png" alt="GitHub" />
             </a>
           </div>
@@ -132,7 +132,7 @@ const AboutUs: React.FC = () => {
           <p>Back-End Developer</p>
           <img src="./images/Ties-pf.png" alt="Ties Van Oldenborgh" />
           <div className="social-links">
-            <a href="https://github.com/Tiesvo" target="_blank" rel="noopener noreferrer">
+            <a className="GitHub" href="https://github.com/Tiesvo" target="_blank" rel="noopener noreferrer">
               <img src="images/211904_social_github_icon.png" alt="GitHub" />
             </a>
           </div>
