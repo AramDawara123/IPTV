@@ -1,5 +1,3 @@
-name: CI Pipeline
-
 on:
   push:
     branches: ["main", "backend"]
@@ -25,15 +23,16 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+            path: node_modules
+            key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-npm-
+
+      - name: List directory contents
+        run: ls -R
 
       - name: Install Node.js dependencies
-        run: npm ci --only=production
+        run: npm install
         working-directory: IPTV-REACT
 
       - name: Build React Application
@@ -44,7 +43,7 @@ jobs:
     name: Python Application
     strategy:
       matrix:
-        os: [ubuntu-latest]  
+        os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -59,13 +58,23 @@ jobs:
       - name: Cache pip dependencies
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.cache/pip
+          path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
+      - name: Display Python version and environment
+        run: |
+          python --version
+          pip --version
+          pip list
+
       - name: Install dependencies
         run: |
-          pip install --upgrade pip  # No need to upgrade if already cached
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" 
