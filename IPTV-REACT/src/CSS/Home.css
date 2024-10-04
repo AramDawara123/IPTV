@@ -17,12 +17,21 @@ body {
     overflow-x: hidden;
 }
 
-.btn-1, .btn-2 {
+.btn-1  {
     font-weight: 700;
     fill: #000001;
     color: #000001;
     background-color: #95DD4C;
     border-radius: 28px;
+}
+
+.btn-2 {
+    font-weight: 700;
+    fill: #000001;
+    color: #000001;
+    background-color: #95DD4C;
+    border-radius: 28px;
+    margin-bottom: 1rem;
 }
 
 .free-trial-btn {
