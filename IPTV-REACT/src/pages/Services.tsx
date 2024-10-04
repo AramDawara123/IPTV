@@ -106,19 +106,28 @@ interface CardFlipProps {
 }
 
 const CardFlip: React.FC<CardFlipProps> = ({ movie }) => {
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
-    <button className="card-container" onClick={() => console.log(`Clicked on ${movie.name}`)} aria-label={`Details voor ${movie.name}`}>
-      <div className="flip-card-inner">
+    <button className="card-container" onClick={handleClick}>
+      <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
         <div className="card-front">
           <img className="movie__image" src={movie.cover} alt={movie.name} />
           <h2 className="heading">{movie.name}</h2>
           <p className="paragraph">Cast: {movie.cast}</p>
           <p className="paragraph">Release Date: {movie.releaseDate}</p>
           <p className="paragraph">Rating: {movie.rating} / 10</p>
+
+          {/* Hover tekst */}
+          <div className="hover-text">Click to read more about the film ⓘ</div>
         </div>
         <div className="card-back">
-        <h2 className="heading">Plot:</h2>
-        <p className="paragraph">{movie.plot}</p>
+          <h2 className="heading">Plot:</h2>
+          <p className="paragraph">{movie.plot}</p>
         </div>
       </div>
     </button>

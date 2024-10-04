@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           <img
-            src="https://example.com/images/streaming-service.jpg"
+            src="images/iptv-about-us.png"
             alt="A person enjoying IPTV streaming service on a tablet"
             className="about-image"
             width="600"
@@ -68,38 +68,77 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
 
-        <h2>Our Team</h2>
-        <div className="team-grid">
-          <div className="team-member">
-            <h3>Aram Dawara</h3>
-            <p>Front-End Developer</p>
-            <a href="https://github.com/AramDawara123"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://www.linkedin.com/in/aram-dawara-528637202/"><img src="images/211904_social_github_icon.png" alt="" /></a>
-          </div>
-          <div className="team-member">
-            <h3>Akshay Dhondai</h3>
-            <p>Front-End Developer</p>
-            <a href="https://www.linkedin.com/in/akshay-dhondai/"><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://github.com/Akshay12184"><img src="images/211904_social_github_icon.png" alt="" /></a>
-          </div>
-          <div className="team-member">
-            <h3>Adil Harhour</h3>
-            <p>Front-End Developer</p>
-            <a href="https://www.linkedin.com/in/adil-harhour-3386391b0/ "><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://github.com/Aharhour"><img src="images/211904_social_github_icon.png" alt="" /></a>
-          </div>
-          <div className="team-member">
-            <h3>Jesse Bogaart</h3>
-            <p>Back-End Developer</p>
-            <a href="https://www.linkedin.com/in/jesse-bogaart/ "><img src="images/317725_linkedin_social_icon.png" alt="" /></a>
-            <a href="https://github.com/frkyscience"><img src="images/211904_social_github_icon.png" alt="" /></a>
-          </div>
-          <div className="team-member">
-            <h3>Ties Van Oldenborgh</h3>
-            <p>Back-End Developer</p>
-            <a href="https://github.com/Tiesvo"><img src="images/211904_social_github_icon.png" alt="" /></a>
+        <div className="team-section">
+      <h2>Our Team</h2>
+      <div className="team-grid">
+        <div className="team-member">
+          <h3>Aram Dawara</h3>
+          <p>Front-End Developer</p>
+          <img src="./images/aram-pf.jpeg" alt="Aram Dawara" />
+          <div className="social-links">
+            <a href="https://www.linkedin.com/in/aram-dawara-528637202/" target="_blank" rel="noopener noreferrer">
+              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
+            </a>
+            <a href="https://github.com/AramDawara123" target="_blank" rel="noopener noreferrer">
+              <img src="images/211904_social_github_icon.png" alt="GitHub" />
+            </a>
           </div>
         </div>
+
+        <div className="team-member">
+          <h3>Akshay Dhondai</h3>
+          <p>Front-End Developer</p>
+          <img src="./images/akshay-pf.jpeg" alt="Akshay Dhondai" />
+          <div className="social-links">
+            <a href="https://www.linkedin.com/in/akshay-dhondai/" target="_blank" rel="noopener noreferrer">
+              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
+            </a>
+            <a href="https://github.com/Akshay12184" target="_blank" rel="noopener noreferrer">
+              <img src="images/211904_social_github_icon.png" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+
+        <div className="team-member">
+          <h3>Adil Harhour</h3>
+          <p>Front-End Developer</p>
+          <img src="./images/adil-pf.jpeg" alt="Adil Harhour" />
+          <div className="social-links">
+            <a href="https://www.linkedin.com/in/adil-harhour-3386391b0/" target="_blank" rel="noopener noreferrer">
+              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
+            </a>
+            <a href="https://github.com/Aharhour" target="_blank" rel="noopener noreferrer">
+              <img src="images/211904_social_github_icon.png" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+
+        <div className="team-member">
+          <h3>Jesse Bogaart</h3>
+          <p>Back-End Developer</p>
+          <img src="./images/jesse-pf.jpeg" alt="Jesse Bogaart" />
+          <div className="social-links">
+            <a href="https://www.linkedin.com/in/jesse-bogaart/" target="_blank" rel="noopener noreferrer">
+              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
+            </a>
+            <a href="https://github.com/frkyscience" target="_blank" rel="noopener noreferrer">
+              <img src="images/211904_social_github_icon.png" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+
+        <div className="team-member">
+          <h3>Ties Van Oldenborgh</h3>
+          <p>Back-End Developer</p>
+          <img src="./images/Ties-pf.png" alt="Ties Van Oldenborgh" />
+          <div className="social-links">
+            <a href="https://github.com/Tiesvo" target="_blank" rel="noopener noreferrer">
+              <img src="images/211904_social_github_icon.png" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
         <h2>Our Commitment</h2>
         <p>
