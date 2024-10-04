@@ -1,4 +1,4 @@
-# 🎬 **Stremium** - Your Ultimate Streaming Platform
+# 🎬 **Streemium** - Your Ultimate Streaming Platform
 
 Welcome to **Stremium**, a modern platform for streaming movies, TV shows, and exclusive content. With a wide variety of genres and a growing content library, Stremium provides a seamless viewing experience for all your entertainment needs.
 
