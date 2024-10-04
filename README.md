@@ -75,11 +75,11 @@ Once the installation is complete, open your browser and access the application 
 - 🔍 **Search**: Find your favorite movies or shows using the search bar.
 - ▶️ **Watch**: Select a title and enjoy seamless streaming with full playback controls.
 - ⭐ **Watchlists**: Manage your watchlist by clicking the "Add to Watchlist" button.
-
+- 📊 **Dashboard**: We are also working on a usefull dashboard with info about available movies in Jupyter Notebook with python.
 ---
 
 ## 🛠 Technologies Used
-- **Frontend**: React, JavaScript
+- **Frontend**: React, JavaScript, Tpescript, CSS.
 - **Backend**: Python, Flask
 - **Database**: SQLAlchemy, SQLite
 - **Video Streaming**: HLS (HTTP Live Streaming)
