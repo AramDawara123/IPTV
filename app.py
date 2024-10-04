@@ -69,7 +69,7 @@ def login():
 
     if user and user.password == password:
         # Successful login, redirect to the desired page
-        return redirect("http://localhost:5174")
+        return redirect("http://localhost:5173")
     else:
         # Invalid login attempt
         return "Invalid credentials", 401
