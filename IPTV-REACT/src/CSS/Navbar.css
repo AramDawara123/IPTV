@@ -58,7 +58,7 @@ nav ul li:hover a {
 }
 
 nav .logo-button-container {
-    margin-right: 1.5rem;
+
     text-decoration: none;
 }
 
@@ -70,12 +70,6 @@ button {
     cursor: pointer;
 }
 
-.btn-1 {
-    font-weight: 700;
-    color: #000001;
-    background-color: #95DD4C;
-    border-radius: 28px;
-}
 
 .btn-1 a {
     text-decoration: none;

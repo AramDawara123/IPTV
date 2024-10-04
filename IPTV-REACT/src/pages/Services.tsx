@@ -9,6 +9,8 @@ interface Movie {
   releaseDate: string;
   plot: string;
   rating: number;
+  genre: string;
+  episode_run_time: number;
 }
 
 // Define the props for the Card component
@@ -128,6 +130,10 @@ const CardFlip: React.FC<CardFlipProps> = ({ movie }) => {
         <div className="card-back">
           <h2 className="heading">Plot:</h2>
           <p className="paragraph">{movie.plot}</p>
+          <h2 className="heading">genre:</h2>
+          <p className="paragraph">{movie.genre}</p>
+          <h2 className="heading">episode's:</h2>
+          <p className="paragraph">{movie.episode_run_time}</p>
         </div>
       </div>
     </button>
