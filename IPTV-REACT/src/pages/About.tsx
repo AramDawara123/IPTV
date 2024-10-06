@@ -1,7 +1,91 @@
 import React from "react";
 import "../CSS/About.css";
 
+interface TeamMember {
+  name: string;
+  role: string;
+  imageSrc: string;
+  linkedInUrl?: string;
+  githubUrl: string;
+}
+
+const teamMembers: { frontEnd: TeamMember[]; backEnd: TeamMember[] } = {
+  frontEnd: [
+    {
+      name: 'Aram Dawara',
+      role: 'Front-End Developer',
+      imageSrc: './images/aram-pf.jpeg',
+      linkedInUrl: 'https://www.linkedin.com/in/aram-dawara-528637202/',
+      githubUrl: 'https://github.com/AramDawara123',
+    },
+    {
+      name: 'Akshay Dhondai',
+      role: 'Front-End Developer',
+      imageSrc: './images/akshay-pf.jpeg',
+      linkedInUrl: 'https://www.linkedin.com/in/akshay-dhondai/',
+      githubUrl: 'https://github.com/Akshay12184',
+    },
+    {
+      name: 'Adil Harhour',
+      role: 'Front-End Developer',
+      imageSrc: './images/adil-pf.jpeg',
+      linkedInUrl: 'https://www.linkedin.com/in/adil-harhour-3386391b0/',
+      githubUrl: 'https://github.com/Aharhour',
+    },
+  ],
+  backEnd: [
+    {
+      name: 'Jesse Bogaart',
+      role: 'Back-End Developer',
+      imageSrc: './images/jesse-pf.jpeg',
+      linkedInUrl: 'https://www.linkedin.com/in/jesse-bogaart/',
+      githubUrl: 'https://github.com/frkyscience',
+    },
+    {
+      name: 'Ties Van Oldenborgh',
+      role: 'Back-End Developer',
+      imageSrc: './images/Ties-pf.png',
+      githubUrl: 'https://github.com/Tiesvo',
+    },
+  ],
+};
+
 const AboutUs: React.FC = () => {
+  const renderTeamMembers = (members: TeamMember[]) =>
+    members.map(({ name, role, imageSrc, linkedInUrl, githubUrl }) => (
+      <div key={name} className="team-member">
+        <h3>{name}</h3>
+        <p>{role}</p>
+        <img src={imageSrc} alt={`${name}, ${role}`} />
+        <div className="social-links">
+          {linkedInUrl && (
+            <a
+              className="LinkedIn"
+              href={linkedInUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/317725_linkedin_social_icon.png"
+                alt={`${name}'s LinkedIn`}
+              />
+            </a>
+          )}
+          <a
+            className="GitHub"
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/211904_social_github_icon.png"
+              alt={`${name}'s GitHub`}
+            />
+          </a>
+        </div>
+      </div>
+    ));
+
   return (
     <>
       <main className="about-container">
@@ -69,81 +153,21 @@ const AboutUs: React.FC = () => {
         </div>
 
         <div className="team-section">
-      <h2>Our Team</h2>
-      <div className="team-grid">
-        <div className="team-member">
-          <h3>Aram Dawara</h3>
-          <p>Front-End Developer</p>
-          <img src="./images/aram-pf.jpeg" alt="Aram Dawara" />
-          <div className="social-links">
-            <a className="LinkedIn" href="https://www.linkedin.com/in/aram-dawara-528637202/" target="_blank" rel="noopener noreferrer">
-              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
-            </a>
-            <a className="GitHub" href="https://github.com/AramDawara123" target="_blank" rel="noopener noreferrer">
-              <img src="images/211904_social_github_icon.png" alt="GitHub" />
-            </a>
-          </div>
-        </div>
+          <h1>Our Wonderful Team</h1>
 
-        <div className="team-member">
-          <h3>Akshay Dhondai</h3>
-          <p>Front-End Developer</p>
-          <img src="./images/akshay-pf.jpeg" alt="Akshay Dhondai" />
-          <div className="social-links">
-            <a className="LinkedIn" href="https://www.linkedin.com/in/akshay-dhondai/" target="_blank" rel="noopener noreferrer">
-              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
-            </a>
-            <a className="GitHub" href="https://github.com/Akshay12184" target="_blank" rel="noopener noreferrer">
-              <img src="images/211904_social_github_icon.png" alt="GitHub" />
-            </a>
+          <h2>Front-End Developers:</h2>
+          <div className="team-grid">
+            {renderTeamMembers(teamMembers.frontEnd)}
           </div>
-        </div>
 
-        <div className="team-member">
-          <h3>Adil Harhour</h3>
-          <p>Front-End Developer</p>
-          <img src="./images/adil-pf.jpeg" alt="Adil Harhour" />
-          <div className="social-links">
-            <a className="LinkedIn" href="https://www.linkedin.com/in/adil-harhour-3386391b0/" target="_blank" rel="noopener noreferrer">
-              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
-            </a>
-            <a className="GitHub" href="https://github.com/Aharhour" target="_blank" rel="noopener noreferrer">
-              <img src="images/211904_social_github_icon.png" alt="GitHub" />
-            </a>
+          <h2>Back-End Developers:</h2>
+          <div className="team-grid">
+            {renderTeamMembers(teamMembers.backEnd)}
           </div>
         </div>
-
-        <div className="team-member">
-          <h3>Jesse Bogaart</h3>
-          <p>Back-End Developer</p>
-          <img src="./images/jesse-pf.jpeg" alt="Jesse Bogaart" />
-          <div className="social-links">
-            <a className="LinkedIn" href="https://www.linkedin.com/in/jesse-bogaart/" target="_blank" rel="noopener noreferrer">
-              <img src="images/317725_linkedin_social_icon.png" alt="LinkedIn" />
-            </a>
-            <a className="GitHub" href="https://github.com/frkyscience" target="_blank" rel="noopener noreferrer">
-              <img src="images/211904_social_github_icon.png" alt="GitHub" />
-            </a>
-          </div>
-        </div>
-
-        <div className="team-member">
-          <h3>Ties Van Oldenborgh</h3>
-          <p>Back-End Developer</p>
-          <img src="./images/Ties-pf.png" alt="Ties Van Oldenborgh" />
-          <div className="social-links">
-            <a className="GitHub" href="https://github.com/Tiesvo" target="_blank" rel="noopener noreferrer">
-              <img src="images/211904_social_github_icon.png" alt="GitHub" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
 
         <h2>Our Commitment</h2>
-        <p>
-          At IPTV Streaming Service, we're committed to:
-        </p>
+        <p>At IPTV Streaming Service, we're committed to:</p>
         <ul>
           <li>Providing high-quality, diverse content</li>
           <li>Ensuring a seamless streaming experience</li>
