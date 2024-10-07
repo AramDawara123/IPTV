@@ -3,8 +3,11 @@ from flask import Flask, jsonify, request, render_template, redirect, url_for
 import json
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.abspath('templates'))
+
+
 CORS(app)
 
 # Database configuration
@@ -69,20 +72,46 @@ def login():
 
     if user and user.password == password:
         # Successful login, redirect to the desired page
-        return redirect("http://localhost:5174")
+        return redirect("http://localhost:5173")
     else:
         # Invalid login attempt
-        return "Invalid credentials", 401
+        return render_template('register.html')
 
 
 # API route for data
+# @app.route('/api/data', methods=['GET'])
+# def get_data():
+with open('data.json', 'r') as file:
+    data = json.load(file)
+
+def is_movie(content):
+    return not content.get('series_id')
+
+def is_series(content):
+    return bool(content.get('series_id'))
+
 @app.route('/api/data', methods=['GET'])
-def get_data():
-    with open('data.json', 'r') as file:
-        data = json.load(file)
-    return jsonify(data)
+def get_filtered_content():
+    search = request.args.get('search')
+    content_type = request.args.get('type')
+    max_results = request.args.get('max', default=100, type=int)
 
+    filtered_data = data
 
-# Run the app
+    if search:
+        filtered_data = [item for item in filtered_data if search.lower() in item['name'].lower()]
+
+    if content_type:
+        if content_type.lower() == 'movie':
+            filtered_data = [item for item in filtered_data if is_movie(item)]
+        elif content_type.lower() == 'series':
+            filtered_data = [item for item in filtered_data if is_series(item)]
+        else:
+            return jsonify({"error": "Invalid type parameter. Use 'movie' or 'series'."}), 400
+
+    filtered_data = filtered_data[:max_results]
+
+    return jsonify(filtered_data)
+
 if __name__ == "__main__":
     app.run(port=5011, debug=True)
