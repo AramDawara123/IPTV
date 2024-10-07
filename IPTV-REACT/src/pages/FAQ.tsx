@@ -29,7 +29,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "How can I test the IPTV service?",
-    answer: "We offer a 24-hour free trial. Contact our support team to get started.",
+    answer: "We offer a 12-hour free trial. Contact our support team to get started.",
   },
 ];
 
