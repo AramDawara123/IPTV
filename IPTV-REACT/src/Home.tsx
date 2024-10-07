@@ -174,7 +174,7 @@ const Home: React.FC = () => {
             {
               number: "2",
               title: "Get your account",
-              text: "This process can take 15 to 30 minutes. Please check your inbox and your spam folder. To speed up the process, please contact us via Whatsapp.",
+              text: "This process can take 3 to 5 minutes. Please check your inbox and your spam folder in this process.",
               icon: "👤",
             },
             {
@@ -227,7 +227,7 @@ const Home: React.FC = () => {
 
       <footer>
         <p>&copy; allrights reserved 2024</p>
-        </footer>
+      </footer>
     </div>
   );
 };

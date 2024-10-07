@@ -77,7 +77,27 @@ const Contact: React.FC = () => {
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
-    </div>
+
+      <div className="support">
+        <div className="support-text">
+          <svg
+            className="support-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              fill="#fff"
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224-99.6 224-222 0-59.3-23-115.6-60.9-157.9z"
+            />
+          </svg>
+          <p>Contact us for support</p>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; allrights reserved 2024</p>
+      </footer>
+      </div>  
   );
 };
 
