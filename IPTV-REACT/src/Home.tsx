@@ -203,6 +203,12 @@ const Home: React.FC = () => {
       </div>
 
       {/* Support Section */}
+      <div className="whatsapp-support-1">
+        <a href="https://wa.me/qr/2WXRBEQMIZKEB1" target="_blank" rel="nofollow">
+          <span className="whatsapp-button"></span>
+        </a>
+      </div>
+
       <div className="support">
         <div className="support-text">
           <svg
