@@ -85,10 +85,18 @@ with open('data.json', 'r') as file:
     data = json.load(file)
 
 def is_movie(content):
-    return not content.get('series_id')
+    if content['episode_run_time'] == "0":
+        movie = True
+    else:
+        movie = False
+    return movie
 
 def is_series(content):
-    return bool(content.get('series_id'))
+    if content['episode_run_time'] == "0":
+        series = True
+    else:
+        series = False
+    return series
 
 @app.route('/api/data', methods=['GET'])
 def get_filtered_content():
