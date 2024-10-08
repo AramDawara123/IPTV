@@ -73,7 +73,7 @@ const Services: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [search, setSearch] = useState<string>("");
   const [type, setType] = useState<string>("");
-  const [max, setMax] = useState<number>(100);
+  const [max] = useState<number>(100);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -159,7 +159,7 @@ const Services: React.FC = () => {
       pageButtons.push(
         <button
           key={i}
-          className={currentPage === i ? "active" : ""}
+          className={currentPage === i ? "active" : "NotActive"}
           onClick={() => handlePageChange(i)}
         >
           {i}
@@ -201,12 +201,6 @@ const Services: React.FC = () => {
           <option value="movie">Movie</option>
           <option value="series">Series</option>
         </select>
-        <input className="filter"
-          type="int"
-          value={max}
-          onChange={(e) => setMax(Number(e.target.value) || 0)}
-          placeholder="Max Results"
-        />
         <button className="search-btn" onClick={handleSearch}>
           Search
         </button>

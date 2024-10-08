@@ -207,11 +207,15 @@ button.card-container:focus {
     color: #82CC3D;
     margin-left: 10px;
 }
-
-.result {
+.active {
+    background-color: #82CC3D;
+    color: #1d1d1d;
+    margin-top: 2rem;
+}
+.NotActive {
     background-color: black;
-    color: #82CC3D;
-    margin-left: 10px;
+    color:#82CC3D;
+    margin-top: 2rem;
 }
 /* Responsieve stijlen voor kleinere schermen */
 @media (max-width: 768px) {
