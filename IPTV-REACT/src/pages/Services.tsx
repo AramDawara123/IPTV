@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../CSS/Service.css";
@@ -14,17 +15,25 @@ interface Movie {
 }
 
 // Flip Card Component
+
 const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
 
+  // Inside the CardFlip component
   const handleWatchTrailer = () => {
-    const trailerUrl = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
-    window.open(trailerUrl, "_blank");
-  };
+  navigate("/video", { 
+    state: { 
+      videoUrl: "https://www.youtube.com/watch?v=xvFZjo5PgG0", 
+      movie: movie // Pass the entire movie object
+    } 
+  });
+};
+
 
   return (
     <button className="card-container" onClick={handleClick}>
@@ -54,6 +63,7 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
     </button>
   );
 };
+
 
 // Card Component
 const Card: React.FC<{ movies: Movie[] }> = ({ movies }) => {
