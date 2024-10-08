@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../CSS/Service.css";
 
 interface Movie {
@@ -46,6 +47,11 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
 
 // Card Component
 const Card: React.FC<{ movies: Movie[] }> = ({ movies }) => {
+  if (!Array.isArray(movies)) {
+    console.error("Expected movies to be an array, but got:", movies);
+    return <p>No movies/series available.</p>;
+  }
+
   return (
     <div className="cardlist__movies">
       {movies.map((movie, index) => (
@@ -57,9 +63,17 @@ const Card: React.FC<{ movies: Movie[] }> = ({ movies }) => {
   );
 };
 
+interface SearchParams {
+  type?: string;
+  max?: string;
+  search?: string;
+}
+
 const Services: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [search, setSearch] = useState<string>("");
+  const [type, setType] = useState<string>("");
+  const [max, setMax] = useState<number>(100);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -69,38 +83,54 @@ const Services: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
+      setError(null);
+
       try {
-        const response = await fetch("/data.json");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
+        const params: SearchParams = {};
+        if (search) params.search = search;
+        if (type) params.type = type;
+        if (max) params.max = max.toString();
+
+        console.log("Request params:", params);
+
+        const response = await axios.get<Movie[]>("http://127.0.0.1:5011/api/data", { params });
+
+        console.log("API response data:", response.data);
+
+        if (Array.isArray(response.data)) {
+          setMovies(response.data);
+          setFilteredMovies(response.data);
+        } else {
+          console.error("Expected an array from API, but got:", response.data);
+          setMovies([]);
+          setFilteredMovies([]);
         }
-        const data: Movie[] = await response.json();
-        setMovies(data);
-        setFilteredMovies(data);
       } catch (error) {
-        setError("Error fetching data");
-        console.log(error);
+        // @ts-expect-error @ts-ignore
+        setError(error.response?.data?.error || "Error fetching data");
+        console.error("Error fetching data:", error);
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchData();
-  }, []);
+  }, [search, type, max]);
 
   // Update totalPages whenever filteredMovies changes
   useEffect(() => {
     setTotalPages(Math.ceil(filteredMovies.length / itemsPerPage));
-    setCurrentPage(1); // Reset to page 1 when movies change
+    setCurrentPage(1);
   }, [filteredMovies]);
 
   const handleSearch = () => {
-    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+    const lowerCaseSearch = search.toLowerCase();
     const filtered = movies.filter((movie) =>
-      movie.name.toLowerCase().includes(lowerCaseSearchTerm)
+      movie.name.toLowerCase().includes(lowerCaseSearch)
     );
     setFilteredMovies(filtered);
-    setCurrentPage(1); // Reset to page 1 when searching
+    setCurrentPage(1);
   };
 
   const paginatedMovies = filteredMovies.slice(
@@ -118,11 +148,9 @@ const Services: React.FC = () => {
     const pageButtons = [];
     const maxVisiblePages = 5;
 
-    // Determine start and end page for pagination
     let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
     const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
-    // Adjust startPage if we are at the end of pagination
     if (endPage - startPage < maxVisiblePages - 1) {
       startPage = Math.max(1, endPage - (maxVisiblePages - 1));
     }
@@ -165,8 +193,19 @@ const Services: React.FC = () => {
           className="input"
           type="text"
           placeholder="Find movie/serie"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <select className="filter" value={type} onChange={(e) => setType(e.target.value)}>
+          <option value="">All</option>
+          <option value="movie">Movie</option>
+          <option value="series">Series</option>
+        </select>
+        <input className="filter"
+          type="int"
+          value={max}
+          onChange={(e) => setMax(Number(e.target.value) || 0)}
+          placeholder="Max Results"
         />
         <button className="search-btn" onClick={handleSearch}>
           Search
@@ -184,13 +223,13 @@ const Services: React.FC = () => {
         <p>Loading movies...</p>
       ) : error ? (
         <p>{error}</p>
-      ) : filteredMovies.length > 0 ? (
+      ) : Array.isArray(filteredMovies) && filteredMovies.length > 0 ? (
         <>
           <Card movies={paginatedMovies} />
           {renderPaginationControls()}
         </>
       ) : (
-        <p>No movies found...</p>
+        <p>No movies/series found...</p>
       )}
     </>
   );

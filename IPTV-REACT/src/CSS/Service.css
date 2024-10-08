@@ -201,6 +201,17 @@ button {
     background-color: black;
 }
 
+.filter {
+    background-color: black;
+    color: #82CC3D;
+    margin-left: 10px;
+}
+
+.result {
+    background-color: black;
+    color: #82CC3D;
+    margin-left: 10px;
+}
 /* Responsieve stijlen voor kleinere schermen */
 @media (max-width: 768px) {
     .card {
