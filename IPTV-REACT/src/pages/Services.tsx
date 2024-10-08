@@ -141,14 +141,14 @@ const Services: React.FC = () => {
 
     return (
       <div className="pagination-controls">
-        <button
+        <button className="Previous-button"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
           Previous
         </button>
         {pageButtons}
-        <button
+        <button className="Next-button"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >

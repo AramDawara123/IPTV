@@ -67,6 +67,7 @@
 
 /* Stijl voor de zoekknop */
 .search-btn {
+    margin-top: 2rem;
     border-radius: 15px;
     background-color: #95DD4C;
     font-size: 14px;
@@ -191,7 +192,7 @@ button.card-container:focus {
     justify-content: center;
 }
 
-button {
+.Next-button, .Previous-button {
     color: green;
     padding: 20px 30px;
     margin-top: 2rem;
