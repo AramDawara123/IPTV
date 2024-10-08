@@ -4,6 +4,7 @@ import Home from "../Home";
 import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
+import Video from "./Video";
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/video" element={<Video />} />
       </Routes>
     </div>
   );

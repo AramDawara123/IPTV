@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "../src/pages/App";
-import "./CSS/Home.css";
 import FAQ from "./pages/FAQ";
+import "./CSS/Home.css";
 
 interface Plan {
   duration: string;

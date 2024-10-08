@@ -185,6 +185,26 @@ button.card-container:focus {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Stijl voor de Watch Trailer button */
+.watch-trailer-btn {
+    background-color: #82CC3D;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect voor de knop */
+.watch-trailer-btn:hover {
+    background-color: #95DD4C;
+    transform: scale(1.05);
+}
+
 /*page systeem styling*/
 .pagination-controls {
     display: flex;

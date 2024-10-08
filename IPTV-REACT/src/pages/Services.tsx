@@ -21,6 +21,11 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
     setIsFlipped(!isFlipped);
   };
 
+  const handleWatchTrailer = () => {
+    const trailerUrl = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
+    window.open(trailerUrl, "_blank");
+  };
+
   return (
     <button className="card-container" onClick={handleClick}>
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
@@ -38,7 +43,12 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
           <h2 className="heading">Genre:</h2>
           <p className="paragraph">{movie.genre}</p>
           <h2 className="heading">Episode runtime:</h2>
-          <p className="paragraph">{movie.episode_run_time}</p>
+          <p className="paragraph">{movie.episode_run_time} minutes</p>
+
+          {/* Watch Trailer button */}
+          <button className="watch-trailer-btn" onClick={handleWatchTrailer}>
+            Watch Trailer
+          </button>
         </div>
       </div>
     </button>
@@ -226,7 +236,7 @@ const Services: React.FC = () => {
         <p>No movies/series found...</p>
       )}
     </>
-  );
+  )
 };
 
 export default Services;

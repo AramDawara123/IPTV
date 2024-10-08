@@ -22,6 +22,9 @@ export const Navbar: React.FC = () => {
         <li>
           <a href="/contact">Contact</a>
         </li>
+        <li>
+          <a href="/video">video</a>
+        </li>
       </ul>
 
       <div className="logo-button-container">
