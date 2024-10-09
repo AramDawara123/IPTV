@@ -28,7 +28,7 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
   const handleWatchTrailer = () => {
   navigate("/video", { 
     state: { 
-      videoUrl: "https://www.youtube.com/watch?v=xvFZjo5PgG0", 
+      videoUrl: "https://www.youtube.com/watch?v=jpWUOxRozZg", 
       movie: movie // Pass the entire movie object
     } 
   });
