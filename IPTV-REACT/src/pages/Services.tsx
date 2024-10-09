@@ -23,21 +23,19 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
     setIsFlipped(!isFlipped);
   };
 
-  const handleWatchTrailer = () => {
+  const handleWatchTrailer = (e: React.MouseEvent) => {
+    e.stopPropagation();  // Prevent card flip on button click
     const lastSeen = JSON.parse(localStorage.getItem('lastSeenTrailers') || '[]');
     const updatedList = [movie, ...lastSeen.filter((m: Movie) => m.name !== movie.name)].slice(0, 6);
     localStorage.setItem('lastSeenTrailers', JSON.stringify(updatedList));
 
-    navigate("/video", { 
-      state: { 
-        videoUrl: "https://www.youtube.com/watch?v=jpWUOxRozZg", 
-        movie: movie
-      } 
+    navigate("/video", {
+      state: { videoUrl: "https://www.youtube.com/watch?v=jpWUOxRozZg", movie: movie }
     });
   };
 
   return (
-    <button className="card-container" onClick={handleClick}>
+    <div className="card-container" onClick={handleClick}>  {/* Changed from button to div */}
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         <div className="card-front">
           <img className="movie__image" src={movie.cover} alt={movie.name} />
@@ -59,12 +57,16 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
           </button>
         </div>
       </div>
-    </button>
+    </div>
   );
 };
 
 // Card Component
 const Card: React.FC<{ movies: Movie[] }> = ({ movies }) => {
+  if (!Array.isArray(movies)) {
+    console.error("Expected movies to be an array, but got:", movies);
+    return <p>No movies/series available.</p>;
+  }
   return (
     <div className="cardlist__movies">
       {movies.map((movie, index) => (
@@ -75,6 +77,12 @@ const Card: React.FC<{ movies: Movie[] }> = ({ movies }) => {
     </div>
   );
 };
+
+interface SearchParams {
+  type?: string;
+  max?: string;
+  search?: string;
+}
 
 // Last Seen Trailers List (collapsible)
 const LastSeenTrailers: React.FC = () => {
@@ -117,6 +125,7 @@ const Services: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [search, setSearch] = useState<string>("");
   const [type, setType] = useState<string>("");
+  const [max] = useState<number>(100);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -128,21 +137,32 @@ const Services: React.FC = () => {
     const fetchData = async () => {
       setIsLoading(true);
       setError(null);
-
+  
       try {
-        const response = await axios.get<Movie[]>("http://127.0.0.1:5011/api/data");
-        setMovies(response.data);
-        setFilteredMovies(response.data);
+        const params: SearchParams = {};
+        if (search) params.search = search;
+        if (type) params.type = type;
+        if (max) params.max = max.toString();
+  
+        const response = await axios.get<Movie[]>("http://127.0.0.1:5011/api/data", { params });
+  
+        if (Array.isArray(response.data)) {
+          setMovies(response.data);
+          setFilteredMovies(response.data);
+        } else {
+          setMovies([]);
+          setFilteredMovies([]);
+        }
       } catch (error) {
-        console.log({error});
-        setError("Error fetching data");
+        console.log(error)
       } finally {
         setIsLoading(false);
       }
     };
-
+  
     fetchData();
-  }, []);
+  }, [search, type, max]);
+
 
   useEffect(() => {
     setTotalPages(Math.ceil(filteredMovies.length / itemsPerPage));
@@ -239,7 +259,7 @@ const Services: React.FC = () => {
         <p>Loading movies...</p>
       ) : error ? (
         <p>{error}</p>
-      ) : filteredMovies.length > 0 ? (
+      ) : Array.isArray(filteredMovies) && filteredMovies.length > 0 ? (
         <>
           <Card movies={paginatedMovies} />
           {renderPaginationControls()}
