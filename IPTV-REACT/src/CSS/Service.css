@@ -12,6 +12,92 @@
     box-sizing: border-box;
 }
 
+/* Container for the last seen trailers */
+.last-seen-container {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  /* Button to toggle the visibility of the last seen trailers */
+  .toggle-btn {
+    background-color: #82CC3D;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #95DD4C;
+    transform: scale(1.05);
+  }
+  
+  /* Style for the list of last seen trailers */
+  .last-seen-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    transition: max-height 0.6s ease-in-out;
+  }
+  
+  /* When expanded, show the list with a smooth animation */
+  .expanded {
+    opacity: 1;
+    max-height: 500px; /* Adjust based on content height */
+  }
+  
+  /* Individual last-seen movie box */
+  .last-seen-item {
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  .last-seen-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Image styling */
+  .last-seen-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #95DD4C;
+  }
+  
+  /* Movie info inside the last-seen item */
+  .movie-info {
+    padding: 10px;
+  }
+  
+  .movie-info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .movie-info p {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /* Collapsed state for the list (hidden) */
+  .collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  }
+  
+
 /* Stijl voor de lijst met films */
 .cardlist__movies {
     display: flex;
