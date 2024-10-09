@@ -91,6 +91,9 @@ const Services: React.FC = () => {
   const itemsPerPage = 12;
   const [totalPages, setTotalPages] = useState<number>(1);
 
+  // New state for genre selection
+  const [selectedGenre, setSelectedGenre] = useState<string>("");
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -109,16 +112,26 @@ const Services: React.FC = () => {
         console.log("API response data:", response.data);
 
         if (Array.isArray(response.data)) {
-          setMovies(response.data);
-          setFilteredMovies(response.data);
+          // Zorg ervoor dat genres goed worden ingelezen
+          const moviesData = response.data.map(movie => ({
+            ...movie,
+            genre: movie.genre.split(',').map(g => g.trim()).join(' ') // Dit kan helpen om genres goed in te lezen
+          }));
+          setMovies(moviesData);
+          setFilteredMovies(moviesData);
         } else {
           console.error("Expected an array from API, but got:", response.data);
           setMovies([]);
           setFilteredMovies([]);
         }
-      } catch (error) {
-        // @ts-expect-error @ts-ignore
-        setError(error.response?.data?.error || "Error fetching data");
+      } catch (error: unknown) {
+        if (axios.isAxiosError(error)) {
+          setError(error.response?.data?.error || "Error fetching data");
+        } else if (error instanceof Error) {
+          setError(error.message || "Error fetching data");
+        } else {
+          setError("An unknown error occurred");
+        }
         console.error("Error fetching data:", error);
       } finally {
         setIsLoading(false);
@@ -128,17 +141,30 @@ const Services: React.FC = () => {
     fetchData();
   }, [search, type, max]);
 
+
   // Update totalPages whenever filteredMovies changes
   useEffect(() => {
     setTotalPages(Math.ceil(filteredMovies.length / itemsPerPage));
     setCurrentPage(1);
   }, [filteredMovies]);
 
+  // Function to filter movies by genre
+  const filterMoviesByGenre = (movies: Movie[], genre: string): Movie[] => {
+    if (!genre) return movies; // If no genre selected, return all
+    return movies.filter((movie) =>
+      movie.genre.toLowerCase().includes(genre.toLowerCase())
+    );
+  };
+
   const handleSearch = () => {
     const lowerCaseSearch = search.toLowerCase();
-    const filtered = movies.filter((movie) =>
+    let filtered = movies.filter((movie) =>
       movie.name.toLowerCase().includes(lowerCaseSearch)
     );
+
+    // Apply genre filtering
+    filtered = filterMoviesByGenre(filtered, selectedGenre);
+
     setFilteredMovies(filtered);
     setCurrentPage(1);
   };
@@ -211,6 +237,21 @@ const Services: React.FC = () => {
           <option value="movie">Movie</option>
           <option value="series">Series</option>
         </select>
+
+        {/* New genre filter dropdown */}
+
+        <select className="filter" value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
+          <option value="">All Genres</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Action">Action</option>
+          <option value="Familia">Familia</option>
+          <option value="Comédia">Comédia</option>
+          <option value="Drama">Drama</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Adventure">Adventure</option>
+        </select>
+
+
         <button className="search-btn" onClick={handleSearch}>
           Search
         </button>
