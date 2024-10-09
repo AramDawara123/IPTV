@@ -4,7 +4,7 @@ import Home from "../Home";
 import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
-import Video from "./Video";
+import Video from "./Video";    
 
 const App: React.FC = () => {
   return (

@@ -1,0 +1,27 @@
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .video-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .movie-details {
+    margin-top: 20px;
+    text-align: left; /* Align the text to the left for better readability */
+    max-width: 600px; /* Limit the width for better layout */
+  }
+  
+  .movie-details h2 {
+    margin: 10px 0;
+  }
+  
+  iframe {
+    border: none;
+  }
+  
