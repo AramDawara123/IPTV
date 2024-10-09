@@ -306,6 +306,7 @@ button.card-container:focus {
     border-radius: 5px;
     cursor: pointer;
     background-color: black;
+    margin-top: 2rem;
 }
 
 .filter {
@@ -323,6 +324,7 @@ button.card-container:focus {
     color:#82CC3D;
     margin-top: 2rem;
 }
+
 /* Responsieve stijlen voor kleinere schermen */
 @media (max-width: 768px) {
     .card {
