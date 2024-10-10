@@ -47,7 +47,7 @@
   /* When expanded, show the list with a smooth animation */
   .expanded {
     opacity: 1;
-    max-height: 500px; /* Adjust based on content height */
+    max-height: 500px; 
   }
   
   /* Individual last-seen movie box */

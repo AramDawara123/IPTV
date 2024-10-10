@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Reset basis opmaak voor body en html */
 body, html {
     padding: 0;
     margin: 0;
@@ -9,10 +10,12 @@ body, html {
     line-height: 1.6;
 }
 
+/* Algemeen: maakt box-model consistent */
 * {
     box-sizing: border-box;
 }
 
+/* Header opmaak: flexbox voor layout */
 header {
     width: 100%;
     display: flex;
@@ -22,17 +25,20 @@ header {
     background-color: black;
 }
 
+/* Logo styling */
 .logo {
     height: 100px;
     width: 100px;
 }
 
+/* Container styling voor de inhoud */
 .about-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Koppen styling */
 h1, h2 {
     color: #E7E7E7;
     font-family: "Inter", sans-serif;
@@ -51,11 +57,13 @@ h2 {
     margin-top: 40px;
 }
 
+/* Paragraaf styling */
 p {
     font-size: 18px;
     margin-bottom: 20px;
 }
 
+/* Grid opmaak voor de about-sectie */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -63,18 +71,21 @@ p {
     margin-top: 40px;
 }
 
+/* Afbeelding styling */
 .about-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
+/* Tijdlijn layout */
 .timeline {
     position: relative;
     max-width: 800px;
     margin: 40px auto;
 }
 
+/* Tijdlijn lijn */
 .timeline::after {
     content: '';
     position: absolute;
@@ -86,6 +97,7 @@ p {
     margin-left: -3px;
 }
 
+/* Tijdlijn item opmaak */
 .timeline-item {
     padding: 10px 40px;
     position: relative;
@@ -106,6 +118,7 @@ p {
     z-index: 1;
 }
 
+/* Layout aanpassingen voor links en rechts */
 .left {
     left: 0;
 }
@@ -118,6 +131,7 @@ p {
     left: -16px;
 }
 
+/* Tijdlijn content styling */
 .content {
     padding: 20px 30px;
     background-color: #1a1a1a;
@@ -130,6 +144,7 @@ p {
     transform: scale(1.10);
 }
 
+/* Grid voor het teamoverzicht */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -137,6 +152,7 @@ p {
     margin-top: 40px;
 }
 
+/* Styling voor teamleden */
 .team-member {
     text-align: center;
     background-color: #1a1a1a;
@@ -150,6 +166,7 @@ p {
     transform: scale(1.10);
 }
 
+/* Afbeelding teamlid */
 .team-member img {
     width: 150px;
     height: 150px;
@@ -157,29 +174,18 @@ p {
     margin-bottom: 15px;
 }
 
+/* Naam en rol van teamlid */
 .team-member h3 {
     color: #95DD4C;
     margin-bottom: 5px;
 }
 
-.team-member p {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.LinkedIn{
+/* Sociale links voor teamleden */
+.LinkedIn, .GitHub {
     transition: transform 0.3s ease;
 }
 
-.LinkedIn:hover {
-    transform: scale(1.20);
-}
-
-.GitHub{
-    transition: transform 0.3s ease;
-}
-
-.GitHub:hover {
+.LinkedIn:hover, .GitHub:hover {
     transform: scale(1.20);
 }
 
@@ -189,13 +195,6 @@ p {
     margin-top: 10px;
 }
 
-.social-links a, .team-member a {
-    margin: 0 10px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .social-links img, .team-member a img {
     width: 40px;
     height: 40px;
@@ -203,6 +202,11 @@ p {
     margin: 0 auto;
 }
 
+.social-links a, .team-member a {
+    margin: 0 10px;
+}
+
+/* Footer styling */
 footer {
     text-align: center;
     padding: 20px;
@@ -210,6 +214,7 @@ footer {
     margin-top: 40px;
 }
 
+/* Responsive aanpassingen */
 @media screen and (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;

@@ -1,6 +1,7 @@
 import React from "react";
 import "../CSS/About.css";
 
+/* Interface voor teamlid */
 interface TeamMember {
   name: string;
   role: string;
@@ -9,6 +10,7 @@ interface TeamMember {
   githubUrl: string;
 }
 
+/* Teamleden data */
 const teamMembers: { frontEnd: TeamMember[]; backEnd: TeamMember[] } = {
   frontEnd: [
     {
@@ -50,7 +52,9 @@ const teamMembers: { frontEnd: TeamMember[]; backEnd: TeamMember[] } = {
   ],
 };
 
+/* Hoofd component voor de About pagina */
 const AboutUs: React.FC = () => {
+  /* Render teamleden */
   const renderTeamMembers = (members: TeamMember[]) =>
     members.map(({ name, role, imageSrc, linkedInUrl, githubUrl }) => (
       <div key={name} className="team-member">
@@ -95,16 +99,11 @@ const AboutUs: React.FC = () => {
           <div>
             <p>
               Welcome to IPTV Streaming Service, your premier destination for
-              high-quality, on-demand entertainment. Since our inception, we've
-              been dedicated to revolutionizing the way people consume media,
-              bringing you an extensive library of content right at your
-              fingertips.
+              high-quality, on-demand entertainment.
             </p>
             <p>
               Our mission is to provide a seamless, user-friendly streaming
-              experience that caters to diverse tastes and preferences. We
-              believe in the power of technology to connect people with the
-              content they love, anytime and anywhere.
+              experience that caters to diverse tastes and preferences.
             </p>
           </div>
           <img
@@ -133,9 +132,7 @@ const AboutUs: React.FC = () => {
           <div className="timeline-item left">
             <div className="content">
               <h3>2027</h3>
-              <p>
-                Expanding into international markets, getting more people on our site
-              </p>
+              <p>Expanding into international markets</p>
             </div>
           </div>
           <div className="timeline-item right">
@@ -167,7 +164,6 @@ const AboutUs: React.FC = () => {
         </div>
 
         <h2>Our Commitment</h2>
-        <p>At IPTV Streaming Service, we're committed to:</p>
         <ul>
           <li>Providing high-quality, diverse content</li>
           <li>Ensuring a seamless streaming experience</li>
@@ -175,10 +171,6 @@ const AboutUs: React.FC = () => {
           <li>Respecting user privacy and data security</li>
           <li>Offering excellent customer support</li>
         </ul>
-        <p>
-          We're excited to continue growing and evolving with you, our valued
-          customers. Thank you for being a part of our journey!
-        </p>
       </main>
 
       <footer>

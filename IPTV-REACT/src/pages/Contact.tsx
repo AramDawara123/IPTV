@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "../CSS/Contact.css";
 
+/* Interface voor formuliergegevens */
 interface ContactFormData {
   name: string;
   email: string;
   message: string;
 }
 
+/* Contact component */
 const Contact: React.FC = () => {
+  /* Formulier data en submit status */
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -16,6 +19,7 @@ const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  /* Behandel veldwijzigingen */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -23,10 +27,12 @@ const Contact: React.FC = () => {
     });
   };
 
+  /* Behandel formulierverzending */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    /* Simuleer formulierverzending */
     setTimeout(() => {
       setIsSubmitting(false);
       alert("Form submitted successfully!");
@@ -35,8 +41,11 @@ const Contact: React.FC = () => {
   };
 
   return (
+    /* Contactpagina layout */
     <div className="contact-page">
       <h1>Contact Us</h1>
+      
+      {/* Formulier */}
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="contact-form-group">
           <label htmlFor="name" className="contact-form-label">Name</label>
@@ -73,11 +82,13 @@ const Contact: React.FC = () => {
           />
         </div>
 
+        {/* Verzendknop */}
         <button type="submit" disabled={isSubmitting} className="contact-form-button">
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
 
+      {/* WhatsApp ondersteuning */}
       <div className="support">
         <div className="support-text">
           <svg
@@ -99,10 +110,11 @@ const Contact: React.FC = () => {
         </button>
       </div>
 
+      {/* Footer */}
       <footer>
-        <p>&copy; allrights reserved 2024</p>
+        <p>&copy; all rights reserved 2024</p>
       </footer>
-      </div>  
+    </div>
   );
 };
 

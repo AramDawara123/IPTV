@@ -182,7 +182,6 @@ const LastSeenTrailers: React.FC = () => {
   );
 };
 
-
 // Services Component (main)
 const Services: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -241,8 +240,6 @@ const Services: React.FC = () => {
   
     fetchData();
   }, [search, type, max]);
-
-
 
   useEffect(() => {
     setTotalPages(Math.ceil(filteredMovies.length / itemsPerPage));
@@ -351,7 +348,6 @@ const Services: React.FC = () => {
           <option value="Soap">soap</option>
           <option value="Adventure">Adventure</option>
         </select>
-
 
         <button className="search-btn" onClick={handleSearch}>
           Search

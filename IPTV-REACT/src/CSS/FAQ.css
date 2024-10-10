@@ -1,4 +1,4 @@
-/* faq section */
+/* FAQ sectie styling */
 .faq {
     padding: 30px;
     margin: 0 auto;
@@ -7,25 +7,28 @@
     width: 85%;
 }
 
+/* Titel styling */
 .faq h1 {
     text-align: center;
 }
 
+/* Styling voor elke individuele FAQ item */
 .faq-item {
     margin-bottom: 10px;
     border-radius: 5px;
     overflow: hidden;
 }
 
+/* Vraagsectie van de FAQ */
 .faq-question {
     font-weight: 600;
-    font-size: bold;
     background-color: #111;
     padding: 15px;
     cursor: pointer;
     position: relative;
 }
 
+/* Pijltje naast de vraag */
 .faq-question::after {
     content: '\25BC';
     position: absolute;
@@ -33,14 +36,16 @@
     transition: transform 0.3s ease;
 }
 
+/* Antwoordsectie, standaard verborgen */
 .faq-answer {
     background-color: #222;
     padding: 0 15px;
-    max-height: 0;
+    max-height: 0; /* Verbergt het antwoord */
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
+/* Activeer de FAQ, draai het pijltje en toon antwoord */
 .faq-item.active .faq-question::after {
     transform: rotate(180deg);
 }
