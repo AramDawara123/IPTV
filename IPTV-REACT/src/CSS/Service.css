@@ -220,20 +220,6 @@
     transform: rotateY(180deg);
 }
 
-/* Stijl voor de knoppen binnen de kaartcontainer */
-button.card-container {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline: none; 
-}
-
-/* Focusstijl voor knoppen */
-button.card-container:focus {
-    outline: none; 
-}
-
 /* Front en back zijde van de kaart */
 .card-front,
 .card-back {
@@ -323,6 +309,74 @@ button.card-container:focus {
     background-color: black;
     color:#82CC3D;
     margin-top: 2rem;
+}
+
+.AddToWatchlist-btn {
+
+    background-color: black;
+    color: yellow;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.Watchlist-btn {
+    background-color: #1d1d1d;
+    color: #82CC3D;
+    margin-left: 10px;
+    border-radius: 50px;
+}
+
+.watchlist-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    padding: 20px;
+}
+
+.watchlist-content {
+    background-color: black;
+    padding: 30px;
+    border-radius: 50px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.watchlist-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.watchlist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.watchlist-item img {
+    width: 50px;
+    height: 75px;
+    margin-right: 10px;
+}
+
+.close-btn {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    z-index: 1;
 }
 
 /* Responsieve stijlen voor kleinere schermen */

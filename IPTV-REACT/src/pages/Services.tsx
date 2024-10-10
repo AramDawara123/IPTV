@@ -17,7 +17,14 @@ interface Movie {
 // CardFlip Component for flipping the card
 const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const [isInWatchlist, setIsInWatchlist] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  // Check if movie is in the watchlist on component mount
+  useEffect(() => {
+    const watchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
+    setIsInWatchlist(watchlist.some((m: Movie) => m.name === movie.name));
+  }, [movie.name]);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
@@ -34,8 +41,23 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
     });
   };
 
+  const handleAddToWatchlist = (e: React.MouseEvent) => {
+    e.stopPropagation();
+
+    let watchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
+
+    if (isInWatchlist) {
+      watchlist = watchlist.filter((m: Movie) => m.name !== movie.name);
+    } else {
+      watchlist = [movie, ...watchlist];
+    }
+
+    localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    setIsInWatchlist(!isInWatchlist);
+  };
+
   return (
-    <div className="card-container" onClick={handleClick}>  {/* Changed from button to div */}
+    <div className="card-container" onClick={handleClick}>
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         <div className="card-front">
           <img className="movie__image" src={movie.cover} alt={movie.name} />
@@ -55,11 +77,16 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
           <button className="watch-trailer-btn" onClick={handleWatchTrailer}>
             Watch Trailer
           </button>
+          <br />
+          <button className="AddToWatchlist-btn" onClick={handleAddToWatchlist}>
+            {isInWatchlist ? "⭐ Remove from Watchlist" : "☆ Add to Watchlist"}
+          </button>
         </div>
       </div>
     </div>
   );
 };
+
 
 // Card Component
 const Card: React.FC<{ movies: Movie[] }> = ({ movies }) => {
@@ -77,6 +104,41 @@ const Card: React.FC<{ movies: Movie[] }> = ({ movies }) => {
     </div>
   );
 };
+
+const Watchlist: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const [watchlist, setWatchlist] = useState<Movie[]>([]);
+
+  useEffect(() => {
+    const storedWatchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
+    setWatchlist(storedWatchlist);
+  }, []);
+
+  return (
+    <div className="watchlist-modal">
+      <div className="watchlist-content">
+        <button className="close-btn" onClick={onClose}>Close</button>
+        <h2>Your Watchlist</h2>
+        {watchlist.length > 0 ? (
+          <ul className="watchlist-items">
+            {watchlist.map((movie, index) => (
+              <li key={index} className="watchlist-item">
+                <img src={movie.cover} alt={movie.name} />
+                <div>
+                  <h4>{movie.name}</h4>
+                  <p>Rating: {movie.rating} / 10</p>
+                  <p>Genre: {movie.genre}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Your watchlist is empty.</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
 
 interface SearchParams {
   type?: string;
@@ -120,6 +182,7 @@ const LastSeenTrailers: React.FC = () => {
   );
 };
 
+
 // Services Component (main)
 const Services: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -133,9 +196,15 @@ const Services: React.FC = () => {
   const itemsPerPage = 12;
   const [totalPages, setTotalPages] = useState<number>(1);
 
-  // New state for genre selection
   const [selectedGenre, setSelectedGenre] = useState<string>("");
 
+  // New state to control Watchlist modal visibility
+  const [isWatchlistOpen, setIsWatchlistOpen] = useState<boolean>(false);
+
+  // Function to open/close the watchlist modal
+  const toggleWatchlist = () => {
+    setIsWatchlistOpen(!isWatchlistOpen);
+  };
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -272,10 +341,14 @@ const Services: React.FC = () => {
           <option value="">All Genres</option>
           <option value="Fantasy">Fantasy</option>
           <option value="Action">Action</option>
-          <option value="Familia">Familia</option>
-          <option value="Comédia">Comédia</option>
+          <option value="Mistério">Mystery</option>
+          <option value="Comédia">Comedy</option>
+          <option value="Animação">Animation</option>
+          <option value="Crime">Crime</option>
+          <option value="Documentário">Documentary</option>
           <option value="Drama">Drama</option>
           <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Soap">soap</option>
           <option value="Adventure">Adventure</option>
         </select>
 
@@ -283,6 +356,15 @@ const Services: React.FC = () => {
         <button className="search-btn" onClick={handleSearch}>
           Search
         </button>
+
+        <button className="Watchlist-btn" onClick={toggleWatchlist}>
+          View Your Watchlist
+        </button>
+      </div>
+
+      {isWatchlistOpen && <Watchlist onClose={toggleWatchlist} />}
+
+      <div className="intropage-service">
       </div>
 
       <div className="intropage-service">
