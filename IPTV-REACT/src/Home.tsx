@@ -138,6 +138,7 @@ const Home: React.FC = () => {
           </div>
         ))}
       </div>
+      
       <div className="wrapper">
         {[
           "images/brand_item14-150x46-1-1.webp",
