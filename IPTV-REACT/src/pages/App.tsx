@@ -1,10 +1,10 @@
-// Importeert de nodige modules uit react-router-dom
 import { Navigate, Route, Routes } from "react-router-dom";
 
 // Importeert de navigatiebalk en de verschillende pagina's
 import { Navbar } from "./Navbar";
 import Home from "../Home";
 import About from "./About";
+import NewMovies from "./NewMovies";
 import Services from "./Services";
 import Contact from "./Contact";
 import Video from "./Video";    
@@ -27,6 +27,7 @@ const App: React.FC = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/video" element={<Video />} />
+        <Route path="/newmovies" element={<NewMovies />} />
       </Routes>
     </div>
   );

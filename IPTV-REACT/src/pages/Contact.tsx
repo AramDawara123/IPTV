@@ -10,7 +10,6 @@ interface ContactFormData {
 
 /* Contact component */
 const Contact: React.FC = () => {
-  /* Formulier data en submit status */
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -32,7 +31,6 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    /* Simuleer formulierverzending */
     setTimeout(() => {
       setIsSubmitting(false);
       alert("Form submitted successfully!");

@@ -16,6 +16,7 @@ export const Navbar: React.FC = () => {
       {/* Navigatiemenu */}
       <ul className={menuOpen ? "open" : ""}>
         <li><a href="/services">Services</a></li>
+        <li><a href="/newmovies">New movies</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>

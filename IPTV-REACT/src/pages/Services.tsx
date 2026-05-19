@@ -20,7 +20,7 @@ const CardFlip: React.FC<{ movie: Movie }> = ({ movie }) => {
   const [isInWatchlist, setIsInWatchlist] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  // Check if movie is in the watchlist on component mount
+  // Check if movie is in the watchlist on component
   useEffect(() => {
     const watchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
     setIsInWatchlist(watchlist.some((m: Movie) => m.name === movie.name));
@@ -146,7 +146,7 @@ interface SearchParams {
   search?: string;
 }
 
-// Last Seen Trailers List (collapsible)
+// Last Seen Trailers List Component
 const LastSeenTrailers: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [lastSeenTrailers, setLastSeenTrailers] = useState<Movie[]>([]);
@@ -182,7 +182,7 @@ const LastSeenTrailers: React.FC = () => {
   );
 };
 
-// Services Component (main)
+// Services Component 
 const Services: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [search, setSearch] = useState<string>("");
@@ -217,11 +217,11 @@ const Services: React.FC = () => {
   
         const response = await axios.get<Movie[]>("http://127.0.0.1:5011/api/data", { params });
   
+        // genres inladen 
         if (Array.isArray(response.data)) {
-          // Zorg ervoor dat genres goed worden ingelezen
           const moviesData = response.data.map(movie => ({
             ...movie,
-            genre: movie.genre.split(',').map(g => g.trim()).join(' ') // Dit kan helpen om genres goed in te lezen
+            genre: movie.genre.split(',').map(g => g.trim()).join(' ')
           }));
           setMovies(moviesData);
           setFilteredMovies(moviesData);
@@ -248,7 +248,7 @@ const Services: React.FC = () => {
 
   // Function to filter movies by genre
   const filterMoviesByGenre = (movies: Movie[], genre: string): Movie[] => {
-    if (!genre) return movies; // If no genre selected, return all
+    if (!genre) return movies;
     return movies.filter((movie) =>
       movie.genre.toLowerCase().includes(genre.toLowerCase())
     );
@@ -331,8 +331,6 @@ const Services: React.FC = () => {
           <option value="movie">Movie</option>
           <option value="series">Series</option>
         </select>
-
-        {/* New genre filter dropdown */}
 
         <select className="filter" value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
           <option value="">All Genres</option>
