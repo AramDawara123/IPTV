@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
- 
+
 /* ── Container ── */
 .nm {
   background: #0b0c10;
@@ -9,7 +9,7 @@
   font-family: 'DM Sans', sans-serif;
   color: #e8eaf0;
 }
- 
+
 /* ── Header ── */
 .nm-head {
   display: flex;
@@ -17,7 +17,7 @@
   gap: 16px;
   margin-bottom: 28px;
 }
- 
+
 .nm-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(48px, 8vw, 80px);
@@ -26,11 +26,11 @@
   line-height: 1;
   margin: 0;
 }
- 
+
 .nm-title-accent {
-  color: #f0c93a;
+  color: #38de40;
 }
- 
+
 .nm-pill {
   font-size: 11px;
   font-weight: 500;
@@ -42,14 +42,97 @@
   border-radius: 999px;
   align-self: center;
 }
- 
-/* ── Divider ── */
+
 .nm-divider {
   height: 1px;
   background: #1f2230;
   margin-bottom: 20px;
 }
- 
+
+/* ── Zoekbalk ── */
+.nm-search {
+  width: 100%;
+  background: #0f1018;
+  border: 1px solid #1f2230;
+  border-radius: 6px;
+  color: #e8eaf0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.nm-search::placeholder {
+  color: #3d4255;
+}
+
+.nm-search:focus {
+  border-color: #4ae952;
+}
+
+/* ── Genre-filterknopen ── */
+.nm-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.nm-filter-btn {
+  background: transparent;
+  border: 1px solid #1f2230;
+  color: #5a5f72;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nm-filter-btn:hover {
+  border-color: #3d4255;
+  color: #e8eaf0;
+}
+
+.nm-filter-btn--active {
+  color: #4ae952;
+  border-color: #4ae952;
+}
+
+/* ── Foutmelding ── */
+.nm-error {
+  font-size: 12px;
+  color: #f05a5a;
+  border: 1px solid #2a1515;
+  background: #130a0a;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+/* ── Laadstatus ── */
+.nm-loading {
+  font-size: 13px;
+  color: #3d4255;
+  letter-spacing: 0.08em;
+  padding: 24px 0;
+  text-align: center;
+}
+
+/* ── Geen resultaten ── */
+.nm-empty {
+  font-size: 13px;
+  color: #3d4255;
+  padding: 24px 0;
+  text-align: center;
+}
+
 /* ── List ── */
 .nm-list {
   list-style: none;
@@ -59,8 +142,7 @@
   flex-direction: column;
   gap: 2px;
 }
- 
-/* ── Row ── */
+
 .nm-row {
   display: grid;
   grid-template-columns: 32px 1fr auto auto auto;
@@ -73,14 +155,13 @@
   position: relative;
   transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
 }
- 
+
 .nm-row--hovered {
   background: #13151b;
   border-color: #1f2230;
   transform: translateX(4px);
 }
- 
-/* ── Accent bar (left edge on hover) ── */
+
 .nm-bar {
   position: absolute;
   left: 0;
@@ -92,12 +173,11 @@
   opacity: 0;
   transition: opacity 0.15s ease;
 }
- 
+
 .nm-row--hovered .nm-bar {
   opacity: 1;
 }
- 
-/* ── Row index ── */
+
 .nm-idx {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 20px;
@@ -105,28 +185,27 @@
   text-align: center;
   transition: color 0.15s ease;
 }
- 
+
 .nm-row--hovered .nm-idx {
   color: var(--accent);
 }
- 
-/* ── Movie info ── */
+
 .nm-info {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
- 
+
 .nm-movie {
   font-size: 15px;
   font-weight: 500;
 }
- 
+
 .nm-year {
   font-size: 11px;
   color: #5a5f72;
 }
- 
+
 /* ── Genre badge ── */
 .nm-badge {
   font-size: 10px;
@@ -138,15 +217,15 @@
   border: 1px solid;
   opacity: 0.8;
 }
- 
-/* ── Duration ── */
+
+/* ── Speelduur ── */
 .nm-dur {
   font-size: 12px;
   color: #5a5f72;
   text-align: right;
   white-space: nowrap;
 }
- 
+
 /* ── Rating ── */
 .nm-rating {
   font-family: 'Bebas Neue', sans-serif;
@@ -156,19 +235,19 @@
   align-items: center;
   gap: 4px;
 }
- 
+
 .nm-star {
   font-size: 11px;
   opacity: 0.6;
 }
- 
+
 /* ── Footer ── */
 .nm-foot {
   margin-top: 28px;
   display: flex;
   justify-content: flex-end;
 }
- 
+
 .nm-btn {
   background: transparent;
   border: 1px solid #1f2230;
@@ -182,9 +261,8 @@
   cursor: pointer;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
- 
+
 .nm-btn:hover {
-  border-color: #f0c93a;
-  color: #f0c93a;
+  border-color: #4ae952;
+  color: #4ae952;
 }
- 
