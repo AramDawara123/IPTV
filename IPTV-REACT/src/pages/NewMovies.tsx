@@ -1,10 +1,17 @@
+
 import React, { useState, useEffect } from "react";
 import "../CSS/NewMovies.css";
-
+ 
+// ── Omgevingsvariabele & constanten ───────────────────────────────────────────
+// De API-sleutel wordt ingeladen via Vite's import.meta.env zodat hij nooit
+// hardcoded in de broncode staat. Zonder deze sleutel weigert TMDB elk verzoek.
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-const BASE    = "https://api.themoviedb.org/3";
-const IMG     = "https://image.tmdb.org/t/p/w92";
-
+const BASE    = "https://api.themoviedb.org/3";        // TMDB REST-basis-URL
+const IMG     = "https://image.tmdb.org/t/p/w92";      // Poster-CDN, breedte 92 px
+ 
+// ── Genre-opzoektabel ─────────────────────────────────────────────────────────
+// TMDB geeft genre-ID's terug (bijv. 28), geen namen. Deze Record mapt een
+// numerieke ID naar een leesbare string zodat we de genre-naam kunnen tonen.
 const GENRES: Record<number, string> = {
   28:"Action", 12:"Adventure", 16:"Animation", 35:"Comedy", 80:"Crime",
   99:"Documentary", 18:"Drama", 10751:"Family", 14:"Fantasy", 36:"History",
@@ -21,7 +28,6 @@ const COLORS: Record<string, string> = {
   Thriller:"#c45af0",War:"#f05a5a",     Western:"#f0a45a",
 };
 
-// ── Types ─────────────────────────────────────────────────────────────────────
 interface Movie {
   id: number;
   title: string;
@@ -32,17 +38,22 @@ interface Movie {
   poster: string | null;
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// Helperfuncties ────────────────────────────────────────────────────────────
+// toGenre: pakt het eerste genre-ID uit de array en vertaalt het naar een naam.
+// Geeft "Other" terug als de array leeg is of de ID onbekend is.
 const toGenre  = (ids?: number[]) => (ids?.length ? GENRES[ids[0]] ?? "Other" : "Other");
+ 
+// toTime: zet ruwe minuten (bijv. 132) om naar "2h 12m". Zonder runtime → "—".
 const toTime   = (mins?: number)  => mins ? `${Math.floor(mins / 60)}h ${mins % 60}m` : "—";
-
-// ── API calls ─────────────────────────────────────────────────────────────────
+ 
+// ── API-aanroep 1: haal de huidige bioscoopfilms op ──────────────────────────
+// Haalt de 'now_playing'-lijst op van TMDB en zet de ruwe API-respons om naar onzze movie interface
 async function getNowPlaying(): Promise<Movie[]> {
   const res  = await fetch(`${BASE}/movie/now_playing?api_key=${API_KEY}&language=en-US`);
   if (!res.ok) throw new Error(`TMDB ${res.status}`);
   const { results } = await res.json();
 
-  // Define a narrow type for TMDB results, since we only care about a few fields
+  // Smal type voor de ruwe TMDB-data
   interface MovieResult {
     id: number;
     title: string;
@@ -58,34 +69,39 @@ async function getNowPlaying(): Promise<Movie[]> {
     genre:    toGenre(m.genre_ids),
     rating:   Math.round((m.vote_average ?? 0) * 10) / 10,
     year:     m.release_date ? new Date(m.release_date).getFullYear() : "—",
-    duration: "—",
+    duration: "-",
     poster:   m.poster_path ?? null,
   }));
 }
-
+ 
+// ─ API-aanroep 2: haal de speelduur op voor één film ────────────────────────
 async function getRuntime(id: number): Promise<number | undefined> {
   const res = await fetch(`${BASE}/movie/${id}?api_key=${API_KEY}`);
   if (!res.ok) return undefined;
   const d = await res.json();
   return d.runtime;
 }
-
-// ── Component ─────────────────────────────────────────────────────────────────
+ 
+// ── Hoofdcomponent ────────────────────────────────────────────────────────────
 export const NewMovies: React.FC = () => {
+ 
+  // ── State-declaraties ─────────────────────────────────────────────────────
   const [movies, setMovies]     = useState<Movie[]>([]);
   const [loading, setLoading]   = useState(true);
   const [error, setError]       = useState<string | null>(null);
   const [hovered, setHovered]   = useState<number | null>(null);
   const [search, setSearch]     = useState("");
   const [genre, setGenre]       = useState("All");
-
+ 
+  // ─ Data ophalen bij mounten ──────────────────────────────────────────────
+  // useEffect met lege dependency-array [] draait exact één keer: direct na de
+  // eerste render. Zo voorkomen we herhaalde API-aanroepen bij re-renders.
   useEffect(() => {
     getNowPlaying()
       .then((data) => {
         setMovies(data);
         setLoading(false);
-
-        // Enrich first 5 films with runtime in the background
+        // Verrijking: runtime asynchroon ophalen voor de eerste 5 films
         data.slice(0, 5).forEach(async ({ id }) => {
           const mins = await getRuntime(id);
           if (mins) setMovies((prev) =>
@@ -98,8 +114,9 @@ export const NewMovies: React.FC = () => {
         setLoading(false);
       });
   }, []);
-
-  // Derived state — filter on every render, no extra state needed
+ 
+  // ── Afgeleide state: filtering ────────────────────────────────────────────
+  // We berekenen de genrelijst en de zichtbare films direct bij elke render.
   const genreList = ["All", ...new Set(movies.map((m) => m.genre))];
   const visible   = movies.filter((m) =>
     m.title.toLowerCase().includes(search.toLowerCase()) &&
@@ -112,9 +129,7 @@ export const NewMovies: React.FC = () => {
         <h1 className="nm-title">New <span className="nm-title-accent">Movies</span></h1>
         <span className="nm-pill">{visible.length} titles</span>
       </div>
-
       <div className="nm-divider" />
-
       <input
         className="nm-search"
         type="text"
@@ -123,7 +138,7 @@ export const NewMovies: React.FC = () => {
         onChange={(e) => setSearch(e.target.value)}
         aria-label="Search movies"
       />
-
+      {/* Genre-filterbalken van de opgehaalde films */}
       <div className="nm-filters">
         {genreList.map((g) => (
           <button
@@ -137,9 +152,11 @@ export const NewMovies: React.FC = () => {
         ))}
       </div>
 
+      {/* Fout en laadstatussen */}
       {error   && <p className="nm-error" role="alert">Could not load from TMDB ({error}).</p>}
       {loading && <p className="nm-loading">Loading movies...</p>}
 
+      {/* Filmlijst alleen getoond als het laden klaar is */}
       {!loading && (
         <ul className="nm-list">
           {visible.map((movie, i) => {
@@ -154,6 +171,7 @@ export const NewMovies: React.FC = () => {
               >
                 <span className="nm-bar" />
                 {movie.poster && <img src={`${IMG}${movie.poster}`} alt={movie.title} className="nm-poster" />}
+                {/* padStart zorgt voor een consistente twee-cijferige index: 01, 02 … */}
                 <span className="nm-idx">{String(i + 1).padStart(2, "0")}</span>
                 <div className="nm-info">
                   <span className="nm-movie">{movie.title}</span>
