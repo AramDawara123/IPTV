@@ -1,14 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 import "../CSS/NewMovies.css";
- 
-// ── Omgevingsvariabele & constanten ───────────────────────────────────────────
-// De API-sleutel wordt ingeladen via Vite's import.meta.env zodat hij nooit
-// hardcoded in de broncode staat. Zonder deze sleutel weigert TMDB elk verzoek.
+
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-const BASE    = "https://api.themoviedb.org/3";        // TMDB REST-basis-URL
-const IMG     = "https://image.tmdb.org/t/p/w92";      // Poster-CDN, breedte 92 px
- 
+const BASE    = "https://api.themoviedb.org/3";
+const IMG     = "https://image.tmdb.org/t/p/w92";
+
 // ── Genre-opzoektabel ─────────────────────────────────────────────────────────
 // TMDB geeft genre-ID's terug (bijv. 28), geen namen. Deze Record mapt een
 // numerieke ID naar een leesbare string zodat we de genre-naam kunnen tonen.
